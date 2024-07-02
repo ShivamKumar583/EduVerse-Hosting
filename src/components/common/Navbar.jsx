@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import logo from "../../assets/Logo/Logo-Full-Light.png"
 import { Link, matchPath } from 'react-router-dom'
 import {NavbarLinks} from "../../data/navbar-links"
@@ -11,7 +11,19 @@ import { useState } from 'react'
 import { BsChevronDown } from 'react-icons/bs'
 import { ACCOUNT_TYPE } from "../../utils/constants"
 import ProfileDropdown from '../core/Auth/ProfileDropDown'
+import useOnClickOutside from '../../hooks/useOnClickOutside'
 
+
+const newUserLinks = [
+  {
+    title: "Login",
+    path: "/login",
+  },
+  {
+    title: "Sign Up",
+    path: '/signup',
+  }
+];
 
 const Navbar = () => {
   const { token } = useSelector((state) => state.auth)
@@ -21,6 +33,10 @@ const Navbar = () => {
 
   const [subLinks, setSubLinks] = useState([])
   const [loading, setLoading] = useState(false)
+  const ref = useRef(null)
+  const [open,setOpen] = useState(true);
+
+  useOnClickOutside(ref, () => setOpen(false))
 
   useEffect(() => {
     ;(async () => {
@@ -137,8 +153,60 @@ const Navbar = () => {
           )}
           {token !== null && <ProfileDropdown />}
         </div>
-        <button className="mr-4 md:hidden">
-          <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+
+        <button
+          className="relative mr-1 md:hidden"
+          onClick={() => setOpen(true)}
+        >
+          <div className="flex items-center gap-x-1">
+            <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+          </div>
+          {open && (
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="absolute top-[118%] right-0 z-[1000] divide-y-[1px] divide-richblack-700 w-[120px] overflow-hidden rounded-md border-[1px] border-richblack-700 bg-richblack-800 "
+              ref={ref}
+            >
+              {NavbarLinks.map((link, index) => (
+                <li key={index} className="list-none">
+                  {link.title === "Catalog" ? (
+                    <></>
+                  ) : (
+                    <Link to={link?.path}>
+                      <p
+                        className={`${
+                          matchRoute(link?.path)
+                            ? "text-yellow-25 py-2"
+                            : "text-richblack-25 py-2"
+                        }`}
+                      >
+                        {link.title}
+                      </p>
+                    </Link>
+                  )}
+                </li>
+              ))}
+              {newUserLinks.map((link, index) => (
+                <li key={index} className="list-none">
+                  {link.title === "Catalog" ? (
+                    <></>
+                  ) : (
+                    <Link to={link?.path}>
+                      <p
+                        className={`${
+                          matchRoute(link?.path)
+                            ? "text-yellow-25 py-2"
+                            : "text-richblack-25 py-2"
+                        }`}
+                      >
+                        {link.title}
+                      </p>
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </div>
+          )}
         </button>
       </div>
     </div>
