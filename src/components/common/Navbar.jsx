@@ -186,7 +186,7 @@ const Navbar = () => {
                   )}
                 </li>
               ))}
-              {newUserLinks.map((link, index) => (
+              {!user && newUserLinks.map((link, index) => (
                 <li key={index} className="list-none">
                   {link.title === "Catalog" ? (
                     <></>
