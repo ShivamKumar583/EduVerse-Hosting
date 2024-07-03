@@ -30,7 +30,7 @@ export default function EnrolledCourses() {
 
   return (
     <>
-      <div className="text-3xl text-richblack-50">Enrolled Courses</div>
+      <div className="text-3xl text-richblack-50 ml-12 md:ml-0">Enrolled Courses</div>
       {!enrolledCourses ? (
         <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
           <div className="spinner"></div>

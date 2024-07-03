@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import IconBtn from '../../common/IconBtn'
 import { BsChevronDown } from "react-icons/bs"
-import { IoIosArrowBack } from "react-icons/io"
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 
 const VideoDetailsSideBar = ({setReviewModal}) => {
     const [activeStatus , setActiveStatus] = useState("")
@@ -11,6 +11,7 @@ const VideoDetailsSideBar = ({setReviewModal}) => {
     const navigate = useNavigate()
     const {sectionId , subSectionId} = useParams()
     const location = useLocation()
+    const [open,setOpen] = useState(false);
 
     const{
         courseSectionData,
@@ -41,7 +42,9 @@ const VideoDetailsSideBar = ({setReviewModal}) => {
 
   return (
     <>
-      <div className="flex h-[calc(100vh-3.5rem)] w-[320px] max-w-[350px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800">
+      <div>
+        {open ? (
+          <div className="flex h-[calc(100vh-3.5rem)] w-[320px] max-w-[350px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800">
         <div className="mx-5 flex flex-col items-start justify-between gap-2 gap-y-4 border-b border-richblack-600 py-5 text-lg font-bold text-richblack-25">
           <div className="flex w-full items-center justify-between ">
             <div
@@ -127,6 +130,13 @@ const VideoDetailsSideBar = ({setReviewModal}) => {
           ))}
         </div>
       </div>
+        ) : (
+          <div onClick={() => setOpen(!open)} className="flex h-[35px] my-2 mx-2 w-[35px] items-center justify-center rounded-full bg-richblack-100 p-1 text-richblack-700 hover:scale-90">
+            <IoIosArrowForward size={30} />
+          </div>
+        )}
+      </div>
+      
     </>
   )
 }

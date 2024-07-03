@@ -189,31 +189,32 @@ const VideoDetails = () => {
               className="full gap-y-5 absolute inset-0 z-[100] grid h-full place-content-center font-inter"
             >
               {!completedLectures.includes(subSectionId) && (
-                <IconBtn
-                  disabled={loading}
-                  onclick={() => handleLectureCompletion()}
-                  text={!loading ? "Mark As Completed" : "Loading..."}
-                  customClasses="text-xl max-w-max px-4 mx-auto mb-5"
-                />
+                <button
+                  className="mx-auto bg-yellow-100 text-richblack-900 px-3 py-2 rounded-md text-xl mb-6"
+                  onClick={() => handleLectureCompletion()}
+                >
+                  {!loading ? "Mark As Completed" : "Loading..."}
+                </button>
               )}
-              <IconBtn
-                disabled={loading}
-                onclick={() => {
+              <button
+                onClick={() => {
                   if (playerRef?.current) {
                     // set the current time of the video to 0
-                    playerRef?.current?.seek(0)
-                    setVideoEnded(false)
+                    playerRef?.current?.seek(0);
+                    setVideoEnded(false);
                   }
                 }}
-                text="Rewatch"
-                customClasses="text-xl max-w-max px-4 mx-auto mt-2"
-              />
+                className="text-xl rounded-md text-richblack-900 mx-auto w-fit px-3 py-2 bg-yellow-100"
+              >
+                Rewatch
+              </button>
+
               <div className="mt-10 flex min-w-[250px] justify-center gap-x-4 text-xl">
                 {!isFirstVideo() && (
                   <button
                     disabled={loading}
                     onClick={goToPrevVideo}
-                    className="blackButton"
+                    className="blackButton bg-yellow-100 px-2 py-0 rounded-md text-richblack-900"
                   >
                     Prev
                   </button>
@@ -222,7 +223,7 @@ const VideoDetails = () => {
                   <button
                     disabled={loading}
                     onClick={goToNextVideo}
-                    className="blackButton"
+                    className="blackButton bg-yellow-100 px-2 py-0 rounded-md text-richblack-900"
                   >
                     Next
                   </button>
