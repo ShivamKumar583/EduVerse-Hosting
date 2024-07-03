@@ -157,6 +157,13 @@ const Navbar = () => {
               </button>
             </Link>
           )}
+          {token && (
+            <Link to="/dashboard/my-profile">
+              <button className=" hidden md:block rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
+                Dashboard
+              </button>
+            </Link>
+          )}
           {token !== null && <ProfileDropdown />}
         </div>
 

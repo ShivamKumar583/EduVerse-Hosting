@@ -88,13 +88,13 @@ const ChangeProfilePicture = () => {
                         className= 'cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50'
                         >Select</button>
 
-                        <IconBtn text={loading ? 'Uploading...' : 'Upload'}
-                           onclick={handleFileUpload} 
+                        <button
+                           onClick={handleFileUpload} 
+                           className="flex items-center cursor-pointer gap-1 text-base font-medium text-richblack-900 bg-yellow-50 rounded-md px-3"
                         >
-                            {!loading && (
-                              <FiUpload className="text-lg text-richblack-900" />
-                            )}
-                        </IconBtn>
+                            <div>Upload</div>
+                            <FiUpload/>
+                        </button>
                     </div>
 
                 </div>

@@ -16,7 +16,7 @@ const Sidebar = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [confirmationModal, setConfirmationModal] = useState(null);
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState(false);
 
     if(profileLoading || authLoading) {
         return (

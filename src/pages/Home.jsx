@@ -63,7 +63,8 @@ const Home = () => {
             <video
             muted
             loop
-            autoPlay
+            autoPlay    
+            className=' pointer-events-none'
             >
             <source  src={Banner} type="video/mp4" />
             </video>
@@ -201,11 +202,11 @@ const Home = () => {
 
 
       {/*Section 3 */}
-      <div className='w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white'>
+      <div className='relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white'>
 
             <InstructorSection />
 
-            <h2 className='text-center text-4xl font-semobold mt-10'>review from Other Learners</h2>
+            <h2 className='text-center text-4xl font-semobold mt-8'>Review from Other learners</h2>
             {/* Review Slider here */}
 
             <ReviewSlider/>

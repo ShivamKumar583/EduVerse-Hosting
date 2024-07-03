@@ -32,7 +32,7 @@ const ReviewSlider = () => {
 
   return (
     <div>
-        <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent">
+        <div className="my-[50px] h-auto max-w-maxContentTab lg:max-w-maxContent">
             <Swiper slidesPerView={4} spaceBetween={24} loop={true}
                 FreeMode={true} autoplay={{delay:2500,disableOnInteraction: false,}} modules={[FreeMode ,Pagination,Autoplay]} className=' w-full'
             >
