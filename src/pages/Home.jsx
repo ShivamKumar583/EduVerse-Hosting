@@ -41,7 +41,7 @@ const Home = () => {
             With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors. 
         </div>
 
-        <div className='flex flex-row gap-7 mt-8'>
+        <div className='mg:flex lg:flex xl:flex hidden flex-row gap-7 mt-8'>
             <CTAButton active={true} linkto={"/signup"}> 
                 Learn More
             </CTAButton>
@@ -50,8 +50,16 @@ const Home = () => {
                 Book a Demo
             </CTAButton>
         </div>
+        <div className=" flex  flex-row gap-7 lg:hidden xl:hidden md:hidden ">
+          <CTAButton active={true} linkto={"/signup"}>
+           Signup
+          </CTAButton>
+          <CTAButton active={false} linkto={"/login"}>
+            login
+          </CTAButton>
+        </div>
 
-        <div className='mx-3 my-12 shadow-blue-200'>
+        <div data-aos="flip-right"className="mx-3 my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200">
             <video
             muted
             loop
@@ -100,7 +108,7 @@ const Home = () => {
             <CodeBlocks 
                 position={"lg:flex-row-reverse"}
                 heading={
-                    <div className='text-4xl font-semibold'>
+                    <div data-aos="fade-left" className="w-[100%] text-4xl font-semibold lg:w-[50%]">
                         Unlock Your
                         <HighlightText text={"coding potential"}/>
                         with our online courses
@@ -137,8 +145,8 @@ const Home = () => {
             <div className='homepage_bg h-[310px]'>
 
                 <div className='w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-5 mx-auto'>
-                    <div className='h-[150px]'></div>
-                    <div className='flex flex-row gap-7 text-white '>
+                    <div className='lg:h-[150px]'></div>
+                    <div className='flex flex-row gap-7 text-white lg:mt-8'>
                         <CTAButton active={true} linkto={"/signup"}>
                             <div className='flex items-center gap-3' >
                                 Explore Full Catalog
@@ -160,13 +168,13 @@ const Home = () => {
 
             <div className='mx-auto w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-7'>
 
-                <div className='flex flex-row gap-5 mb-10 mt-[95px]'>
-                    <div className='text-4xl font-semibold w-[45%]'>
+                <div className="mb-10 mt-[-100px] flex flex-col justify-between gap-7 lg:mt-20 lg:flex-row lg:gap-0">
+                    <div className='text-4xl font-semibold lg:w-[45%]'>
                         Get the Skills you need for a
                         <HighlightText text={"Job that is in demand"} />
                     </div>
 
-                    <div className='flex flex-col gap-10 w-[40%] items-start'>
+                    <div className='flex flex-col gap-10 lg:w-[40%] items-start'>
                     <div className='text-[16px]'>
                     The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
                     </div>

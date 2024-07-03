@@ -71,7 +71,7 @@ const ExploreMore = () => {
         })}
       </div>
     </div>
-  )
+  );
 }
 
 export default ExploreMore

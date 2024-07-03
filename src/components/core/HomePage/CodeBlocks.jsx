@@ -6,7 +6,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 
 const CodeBlocks = ({position, heading , subheading , ctabtn1 , ctabtn2 ,codeblock ,backgroundGradient, codeColor }) => {
-  return (
+  return  (
     <div className={`flex ${position} my-20 justify-between flex-col lg:gap-10 gap-10`}>
 
 
@@ -68,7 +68,7 @@ const CodeBlocks = ({position, heading , subheading , ctabtn1 , ctabtn2 ,codeblo
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default CodeBlocks
