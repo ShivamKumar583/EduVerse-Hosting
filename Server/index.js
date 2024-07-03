@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 4000;
 database.connect();
 
 // const corsOptions ={
-//     origin:'http://localhost:3000', 
+//     origin: 'https://your-vercel-app.vercel.app', // or '*'
 //     credentials:true,            //access-control-allow-credentials:true
 //     methods:'GET , HEAD , PUT , PATCH , POST , DELETE',
 //     allowedHeaders:'Content-Type,Authorization',
