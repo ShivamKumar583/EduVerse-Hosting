@@ -38,7 +38,7 @@ const ViewCourse = () => {
             <VideoDetailsSideBar setReviewModal ={setReviewModal}/>
             
             <div className="h-[calc(100vh-3.5rem)] flex-1 overflow-auto">
-                <div>
+                <div className=' mx-6'>
                     <Outlet/>
                 </div>
             </div>
