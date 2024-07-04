@@ -12,8 +12,11 @@ import InstructorSection from '../components/core/HomePage/InstructorSection'
 import Footer from '../components/common/Footer'
 import ExploreMore from '../components/core/HomePage/ExploreMore'
 import ReviewSlider from '../components/common/ReviewSlider'
+import { useSelector } from 'react-redux'
 
 const Home = () => {
+    const {token} = useSelector((state) => state.auth)
+
   return (
     <div >
       {/*Section1  */}
@@ -50,14 +53,15 @@ const Home = () => {
                 Book a Demo
             </CTAButton>
         </div>
-        <div className=" flex  flex-row gap-7 lg:hidden xl:hidden md:hidden ">
+        { !token && (<div className=" flex flex-row gap-7 lg:hidden xl:hidden md:hidden ">
           <CTAButton active={true} linkto={"/signup"}>
            Signup
           </CTAButton>
           <CTAButton active={false} linkto={"/login"}>
             login
           </CTAButton>
-        </div>
+          
+        </div>)}
 
         <div data-aos="flip-right"className="mx-3 my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200">
             <video

@@ -157,70 +157,72 @@ const Navbar = () => {
               </button>
             </Link>
           )}
-          {token && (
-            <Link to="/dashboard/my-profile">
-              <button className=" hidden md:block rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
-                Dashboard
-              </button>
-            </Link>
-          )}
+          
           {token !== null && <ProfileDropdown />}
         </div>
-
-        <button
-          className="relative mr-1 md:hidden"
-          onClick={() => setOpen(true)}
-        >
-          <div className="flex items-center gap-x-1">
-            <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
-          </div>
-          {open && (
-            <div
-              onClick={(e) => e.stopPropagation()}
-              className="absolute top-[118%] right-0 z-[1000] divide-y-[1px] divide-richblack-700 w-[120px] overflow-hidden rounded-md border-[1px] border-richblack-700 bg-richblack-800 "
-              ref={ref}
-            >
-              {NavbarLinks.map((link, index) => (
-                <li key={index} className="list-none">
-                  {link.title === "Catalog" ? (
-                    <></>
-                  ) : (
-                    <Link to={link?.path}>
-                      <p
-                        className={`${
-                          matchRoute(link?.path)
-                            ? "text-yellow-25 py-2"
-                            : "text-richblack-25 py-2"
-                        }`}
-                      >
-                        {link.title}
-                      </p>
-                    </Link>
-                  )}
-                </li>
-              ))}
-              {!user && newUserLinks.map((link, index) => (
-                <li key={index} className="list-none">
-                  {link.title === "Catalog" ? (
-                    <></>
-                  ) : (
-                    <Link to={link?.path}>
-                      <p
-                        className={`${
-                          matchRoute(link?.path)
-                            ? "text-yellow-25 py-2"
-                            : "text-richblack-25 py-2"
-                        }`}
-                      >
-                        {link.title}
-                      </p>
-                    </Link>
-                  )}
-                </li>
-              ))}
+        
+        <div className='relative mr-1 md:hidden flex gap-x-4'>
+            <div>
+              {token !== null && <ProfileDropdown />}
             </div>
-          )}
-        </button>
+
+            <button
+          className="relative mr-1"
+              onClick={() => setOpen(true)}
+            >
+              <div className="flex items-center gap-x-1">
+                <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+              </div>
+              {open && (
+                <div
+                  onClick={(e) => e.stopPropagation()}
+                  className="absolute top-[118%] right-0 z-[1000] divide-y-[1px] divide-richblack-700 w-[120px] overflow-hidden rounded-md border-[1px] border-richblack-700 bg-richblack-800 "
+                  ref={ref}
+                >
+                  {NavbarLinks.map((link, index) => (
+                    <li key={index} className="list-none">
+                      {link.title === "Catalog" ? (
+                        <></>
+                      ) : (
+                        <Link to={link?.path}>
+                          <p
+                            className={`${
+                              matchRoute(link?.path)
+                                ? "text-yellow-25 py-2"
+                                : "text-richblack-25 py-2"
+                            }`}
+                          >
+                            {link.title}
+                          </p>
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                  {!user && newUserLinks.map((link, index) => (
+                    <li key={index} className="list-none">
+                      {link.title === "Catalog" ? (
+                        <></>
+                      ) : (
+                        <Link to={link?.path}>
+                          <p
+                            className={`${
+                              matchRoute(link?.path)
+                                ? "text-yellow-25 py-2"
+                                : "text-richblack-25 py-2"
+                            }`}
+                          >
+                            {link.title}
+                          </p>
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </div>
+              )}
+            </button>
+
+        </div>
+        
       </div>
     </div>
   )

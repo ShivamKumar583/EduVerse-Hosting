@@ -48,7 +48,7 @@ const Instructor = () => {
 
         {loading ? (<div className='spinnner'></div>) : courses.length > 0 ? (
             <div>
-                        <div className="my-4 flex h-[450px] space-x-4">
+                        <div className="my-4 flex md:flex-row flex-col h-[600px] md:h-[450px] md:space-x-4">
                         {/* Render chart / graph */}
                         {totalAmount > 0 || totalStudent > 0 ? (
                         <InstructorChart courses={instructorData} />
@@ -61,7 +61,7 @@ const Instructor = () => {
                         </div>
                         )}
                         {/* Total Statistics */}
-                        <div className="flex min-w-[250px] flex-col rounded-md bg-richblack-800 p-6">
+                        <div className="flex md:mt-0 mx-auto mt-6 min-w-[300px] flex-col rounded-md bg-richblack-800 p-6">
                         <p className="text-lg font-bold text-richblack-5">Statistics</p>
                         <div className="mt-4 space-y-4">
                             <div>
@@ -85,7 +85,7 @@ const Instructor = () => {
                         </div>
                         </div>
                     </div>
-                <div className="rounded-md bg-richblack-800 p-6">
+                <div className="rounded-md bg-richblack-800 md:mt-0 mt-[200px] p-6">
                     {/* render courses */}
 
                     <div className="flex items-center justify-between">
@@ -95,14 +95,14 @@ const Instructor = () => {
                         </Link>
                     </div>
 
-                    <div className="my-4 flex items-start space-x-6">
+                    <div className="my-4 flex md:flex-row flex-col w-full items-start md:space-x-6 space-y-5 md:space-y-0">
                         {
                             courses.slice(0,3).map((course) => (
-                                <div key={course._id} className="w-1/3">
+                                <div key={course._id} className="md:w-1/3 w-full">
                                     <img
                                         src={course.thumbnail}
                                         alt={course.courseName}
-                                        className="h-[201px] w-full rounded-md object-cover"
+                                        className="h-[201px] w-[100%] md:w-full rounded-md object-cover"
                                     />
 
                                     <div className="mt-3 w-full">

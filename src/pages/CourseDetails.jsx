@@ -128,11 +128,11 @@ function CourseDetails() {
         <div className="mx-auto box-content px-4 lg:w-[1260px] 2xl:relative ">
           <div className="mx-auto grid min-h-[450px] max-w-maxContentTab justify-items-center py-8 lg:mx-0 lg:justify-items-start lg:py-0 xl:max-w-[810px]">
             <div className="relative block max-h-[30rem] lg:hidden">
-              <div className="absolute bottom-0 left-0 h-full w-full shadow-[#161D29_0px_-64px_36px_-28px_inset]"></div>
+              <div className="absolute bottom-0 left-0 h-full w-full md:shadow-[#161D29_0px_-64px_36px_-28px_inset]"></div>
               <img
                 src={thumbnail}
                 alt="course thumbnail"
-                className="aspect-auto w-full"
+                className="aspect-auto w-full rounded-md"
               />
             </div>
             <div
@@ -170,10 +170,20 @@ function CourseDetails() {
               <p className="space-x-3 pb-4 text-3xl font-semibold text-richblack-5">
                 Rs. {price}
               </p>
-              <button className="yellowButton" onClick={handleBuyCourse}>
-                Buy Now
+              <button className="yellowButton rounded-md px-3 py-2 bg-yellow-50 text-richblack-900" onClick={
+                user && studentsEnrolled.includes(user?._id)
+                  ? () => navigate("/dashboard/enrolled-courses")
+                  : handleBuyCourse
+              }>
+                {user && studentsEnrolled.includes(user?._id)
+                ? "Go To Course"
+                : "Buy Now"}
               </button>
-              <button className="blackButton">Add to Cart</button>
+              {(!user || studentsEnrolled.includes(user?._id)) && (
+              <button onClick={handleAddToCart} className="blackButton bg-yellow-50 px-3 py-2 rounded-md text-richblack-900">
+                Add to Cart
+              </button>
+            )}
             </div>
           </div>
           {/* Courses Card */}
