@@ -15,6 +15,9 @@ import { fetchCourseDetails } from "../services/operations/courseDetailsAPI"
 import { buyCourse } from "../services/operations/studentFeatureAPI"
 import GetAvgRating from "../utils/avgRatings"
 import Error from "./Error"
+import { ACCOUNT_TYPE } from "../utils/constants"
+import toast from "react-hot-toast"
+import { addToCart } from "../slices/cartSlice"
 
 function CourseDetails() {
   const { user } = useSelector((state) => state.profile)
