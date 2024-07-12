@@ -68,6 +68,18 @@ const userSchema = new mongoose.Schema(
 				ref: "courseProgress",
 			},
 		],
+		expertise:[
+			String
+		],
+		
+		availability:{
+			type:String,
+		},
+
+		sessionDetails:[{
+			type:mongoose.Schema.Types.ObjectId,
+			ref:'Session',
+		}]
 
 		// Add timestamps for when the document is created and last modified
 	},

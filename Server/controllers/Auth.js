@@ -141,6 +141,11 @@ exports.singUp = async (req,res) => {
             about:null,
             contactNumber:null,
         });
+        let availability = 'NA'
+
+        if(accountType === 'Instructor'){
+            availability = 'Available'
+        }
 
         const user = await User.create({
             firstName,
@@ -149,6 +154,7 @@ exports.singUp = async (req,res) => {
             password:hashedPassword,
             accountType,
             additionalDetails:profileDetails._id,
+            availability,
             image:`https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`,
         })
 

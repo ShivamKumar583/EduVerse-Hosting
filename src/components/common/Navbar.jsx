@@ -34,7 +34,7 @@ const Navbar = () => {
   const [subLinks, setSubLinks] = useState([])
   const [loading, setLoading] = useState(false)
   const ref = useRef(null)
-  const [open,setOpen] = useState(true);
+  const [open,setOpen] = useState(false);
 
   useOnClickOutside(ref, () => setOpen(false))
 
@@ -162,7 +162,7 @@ const Navbar = () => {
         </div>
         
         <div className='relative mr-1 md:hidden flex gap-x-4'>
-            <div>
+            <div className=' mt-2'>
               {token !== null && <ProfileDropdown />}
             </div>
 

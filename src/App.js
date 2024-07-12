@@ -29,6 +29,9 @@ import ViewCourse from "./pages/ViewCourse";
 import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
 import PurchaseHistory from "./components/core/Dashboard/PurchaseHistory";
+import ScheduleSession from "./components/core/Dashboard/Session";
+import MeetingProvide from "./components/core/VideoConfrence/MeetingProvide";
+import UpcomingSession from "./components/core/Dashboard/Session/upcomingSession";
 
 function App() {
   const {user}  = useSelector((state) => state.profile);
@@ -115,6 +118,8 @@ function App() {
             <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
             <Route path="dashboard/cart" element={<Cart />} />
             <Route path="dashboard/purchase-history" element={<PurchaseHistory />} />
+            <Route path="dashboard/schedule-session" element={<ScheduleSession/>} />
+            <Route path="dashboard/join-session" element={<MeetingProvide/>} />
           </>
         )
       }
@@ -126,7 +131,9 @@ function App() {
             <Route path="dashboard/instructor" element={<Instructor />} />
             <Route path="dashboard/my-courses" element={<MyCourses />} />
             <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />
-            
+            <Route path="/dashboard/start-session" element={<MeetingProvide/>}/>
+            <Route path="/dashboard/upcoming-session" element={<UpcomingSession/>}/>
+
           </>
         )
       }

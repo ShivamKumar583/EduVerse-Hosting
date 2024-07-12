@@ -16,6 +16,15 @@ export const profileEndpoints = {
   GET_INSTRUCTOR_DATA_API: BASE_URL + '/profile/instructorDashboard'
 } 
 
+// SESSION ENDPOINTS
+export const sessionEndpoints = {
+  GET_INSTRUCTORS_API: BASE_URL + '/session/getInstructors',
+  CREATE_SESSION_API: BASE_URL + '/session/createSession',
+  GET_ALL_INSTRUCTOR_SESSION_API: BASE_URL + '/session/upcoming-session',
+  JOIN_MEETING_API:BASE_URL + '/session/join-meeting'
+
+}
+
 // STUDENTS ENDPOINTS
 export const studentEndpoints = {
   COURSE_PAYMENT_API: BASE_URL + "/payment/capturePayment",

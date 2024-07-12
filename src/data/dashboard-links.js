@@ -41,4 +41,26 @@ export const sidebarLinks = [
     type: ACCOUNT_TYPE.STUDENT,
     icon: "VscHistory",
   },
+  {
+    id: 7,
+    name: "Schedule Session",
+    path: "/dashboard/schedule-session",
+    type: ACCOUNT_TYPE.STUDENT,
+    icon: "VscCalendar",
+  },
+  {
+    id: 8,
+    name: "Upcoming Session",
+    path: "/dashboard/upcoming-session",
+    type: ACCOUNT_TYPE.INSTRUCTOR,
+    icon: "VscVmConnect",
+  },
+  {
+    id: 9,
+    name: "Upcoming Session",
+    path: "/dashboard/join-session",
+    type: ACCOUNT_TYPE.STUDENT,
+    icon: "VscVmConnect",
+  },
+  
 ];

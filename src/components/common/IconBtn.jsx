@@ -15,10 +15,10 @@ const IconBtn = ({
                 </span>
                 {children}
             </>
-        ) : (text)
+        ) : (text) 
     }
     </button>
-  )
+  ) 
 }
 
 export default IconBtn

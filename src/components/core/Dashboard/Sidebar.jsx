@@ -81,7 +81,7 @@ const Sidebar = () => {
             onClick={() => setActive(!active)}
             className="flex justify-end"
           >
-            <AiOutlineDoubleRight className="text-yellow-50 text-4xl" />
+            <AiOutlineDoubleRight className="text-yellow-50 text-4xl z-50" />
           </div>
         </div>
       )}
