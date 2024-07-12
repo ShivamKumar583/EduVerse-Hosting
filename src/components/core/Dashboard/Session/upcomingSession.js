@@ -62,8 +62,8 @@ const UpcomingSession = () => {
         <div className="my-8 text-richblack-5">
           {/* Headings */}
           <div className="flex rounded-t-lg bg-richblack-500 ">
-            <p className="w-[45%] px-5 py-3">Student Name</p>
-            <p className="w-1/4 px-2 py-3 pl-0">Date of session</p>
+            <p className="w-1/3 px-5 py-3">Student Name</p>
+            <p className="w-1/3 px-2 py-3 pl-0">Date of session</p>
           </div>
           {/* sessions Names */}
           {sessions.map((session, i, arr) => (
@@ -74,9 +74,9 @@ const UpcomingSession = () => {
               key={i}
             >
               <div
-                className="flex w-[65%] cursor-pointer items-center gap-4 px-5 py-3 gap-x-2 justify-between"
+                className="flex w-[48%] cursor-pointer items-center gap-4 px-5 py-3 gap-x-2 justify-between"
               >
-              <div className=' flex flex-row items-center gap-x-3'>
+              <div className=' flex ju flex-col md:flex-row items-center gap-x-3'>
               <img
                   src={session.StudentId.image}
                   alt="session_img"
@@ -93,7 +93,7 @@ const UpcomingSession = () => {
               
               <div className="flex w-1/5 flex-col gap-2 px-2 py-3">
                 <IconBtn
-                    text='Start Session'
+                    text='Start Session' className={'px-3 mr-4'}
                     onclick={() => dispatch(setSessionData(session))}
                 />
               </div>

@@ -59,9 +59,9 @@ const ScheduleSession = () => {
         <div className="my-8 text-richblack-5">
           {/* Headings */}
           <div className="flex rounded-t-lg bg-richblack-500 ">
-            <p className="w-[45%] px-5 py-3">Instructor Name</p>
-            <p className="w-1/4 px-2 py-3">Expertise</p>
-            <p className="flex-1 px-2 py-3">Book a session</p>
+            <p className="w-1/3 px-5 py-3">Instructor Name</p>
+            <p className="w-1/3 px-2 py-3">Expertise</p>
+            <p className="w-1/3 flex-1 px-2 py-3">Book a session</p>
           </div>
           {/* mentors Names */}
           {mentors.map((mentor, i, arr) => (
@@ -72,7 +72,7 @@ const ScheduleSession = () => {
               key={i}
             >
               <div
-                className="flex w-[45%] cursor-pointer items-center gap-4 px-5 py-3"
+                className="flex w-[45%] flex-col md:flex-row cursor-pointer items-center gap-4 px-5 py-3"
               >
                 <img
                   src={mentor.image}

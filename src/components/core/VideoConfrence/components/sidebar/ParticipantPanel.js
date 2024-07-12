@@ -25,7 +25,7 @@ function ParticipantListItem({ participantId, raisedHand }) {
           {displayName?.charAt(0).toUpperCase()}
         </div>
         <div className="ml-2 mr-1 flex flex-1">
-          <p className="text-base text-white overflow-hidden whitespace-pre-wrap overflow-ellipsis">
+          <p className="text-base text-richblack-700 overflow-hidden whitespace-pre-wrap overflow-ellipsis">
             {isLocal ? "You" : nameTructed(displayName, 15)}
           </p>
         </div>
@@ -90,7 +90,7 @@ export function ParticipantPanel({ panelHeight }) {
 
   return (
     <div
-      className={`flex w-full flex-col bg-gray-750 overflow-y-auto `}
+      className={`flex w-full flex-col bg-richblack-100 overflow-y-auto `}
       style={{ height: panelHeight }}
     >
       <div

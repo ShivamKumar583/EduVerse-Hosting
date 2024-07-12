@@ -688,7 +688,7 @@ export function BottomBar({
     return (
       <div className="flex items-center justify-center lg:ml-0 ml-4 mt-4 xl:mt-0">
         <div className="flex border-2 border-gray-850 p-2 rounded-md items-center justify-center">
-          <h1 className="text-white text-base ">{meetingId}</h1>
+          <h1 className=" text-richblack-700 text-base ">{meetingId}</h1>
           <button
             className="ml-2"
             onClick={() => {
@@ -789,7 +789,7 @@ export function BottomBar({
             <div className="fixed inset-0 overflow-y-hidden">
               <div className="flex h-full items-end justify-end text-center">
                 <Dialog.Panel className="w-screen transform overflow-hidden bg-gray-800 shadow-xl transition-all">
-                  <div className="grid container bg-gray-800 py-6">
+                  <div className="grid container bg-richblack-100 rounded-lg py-6">
                     <div className="grid grid-cols-12 gap-2">
                       {otherFeatures.map(({ icon ,index}) => {
                         return (
