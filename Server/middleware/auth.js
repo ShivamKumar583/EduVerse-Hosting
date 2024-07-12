@@ -1,7 +1,6 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const User = require("../models/User");
-const { KJUR } = require("jsrsasign");
 
 
 //auth
