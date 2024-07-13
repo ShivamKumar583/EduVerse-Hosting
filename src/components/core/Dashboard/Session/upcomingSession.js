@@ -68,7 +68,7 @@ const UpcomingSession = () => {
           {/* sessions Names */}
           {sessions.map((session, i, arr) => (
             <div
-              className={`flex justify-between items-center border border-richblack-700 ${
+              className={`flex gap-x-10 md:gap-x-0 md:justify-between items-center border border-richblack-700 ${
                 i === arr.length - 1 ? "rounded-b-lg" : "rounded-none"
               }`}
               key={i}
@@ -91,7 +91,7 @@ const UpcomingSession = () => {
                 <div className="w-1/3 pl-[15px]">{formattedDate(session.date)}</div>
               </div>
               
-              <div className="flex w-1/5 flex-col gap-2 px-2 py-3">
+              <div className="flex w-2/5 md:w-[170px] flex-col gap-2 px-2 py-3">
                 <IconBtn
                     text='Start Session' className={'px-3 mr-4'}
                     onclick={() => dispatch(setSessionData(session))}

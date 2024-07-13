@@ -97,7 +97,7 @@ export function MeetingDetailsScreen({
         <div className="w-full md:mt-0 mt-4 flex flex-col">
           <div className="flex items-center justify-center flex-col w-full ">
             { user.accountType === 'Instructor' && <button
-              className="w-full bg-purple-350 text-richblack-100 px-2 py-3 rounded-xl"
+              className="w-full bg-richblack-700 text-richblack-100 px-2 py-3 rounded-xl"
               onClick={async (e) => {
                 const { meetingId, err } = await _handleOnCreateMeeting();
               
