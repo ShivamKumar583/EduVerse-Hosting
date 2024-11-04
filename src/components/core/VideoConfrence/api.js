@@ -22,7 +22,7 @@ export const getToken = async () => {
 };
 
 export const createMeeting = async ({ token }) => {
-  console.log(token);
+  // console.log(token);
   const url = `${API_BASE_URL}/v2/rooms`;
   const options = {
     method: "POST",
@@ -32,8 +32,8 @@ export const createMeeting = async ({ token }) => {
   const response = await fetch(url, options)
   const data = await response.json()
 
-  console.log(response)
-  console.log(data)
+  // console.log(response)
+  // console.log(data)
   if (data.roomId) {
     return { meetingId: data.roomId, err: null }
   } else {

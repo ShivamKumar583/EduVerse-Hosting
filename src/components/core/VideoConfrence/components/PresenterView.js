@@ -86,7 +86,7 @@ export function PresenterView({ height }) {
             filter: isLocal ? "blur(1rem)" : undefined,
           }}
           onError={(err) => {
-            console.log(err, "presenter video error");
+            //(err, "presenter video error");
           }}
         />
         <div

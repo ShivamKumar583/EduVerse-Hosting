@@ -62,8 +62,8 @@ const PublishCourse = () => {
     } 
 
   return (
-    <div className="rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6">
-        <p className="text-2xl font-semibold text-richblack-5">Publish Course</p>
+    <div className="rounded-md border-[1px] border-primaryDaark3 bg-primaryDark p-6">
+        <p className="text-2xl font-semibold text-primaryLight3">Publish Course</p>
 
         <form onSubmit={handleSubmit(onSubmit)}>
             <div  className="my-6 mb-8">
@@ -72,10 +72,10 @@ const PublishCourse = () => {
                     type='checkbox'
                     id='public'
                     {...register('public')}
-                    className="border-gray-300 h-4 w-4 rounded bg-richblack-500 text-richblack-400 focus:ring-2 focus:ring-richblack-5"
+                    className="border-gray-300 h-4 w-4 rounded bg-primaryLight text-primaryLight focus:ring-2 focus:ring-primaryLight"
                 />
 
-                    <span className="ml-2 text-richblack-400">Make this Course Public.</span>
+                    <span className="ml-2 text-primaryLight">Make this Course Public.</span>
 
                 </label>
             </div>
@@ -84,7 +84,7 @@ const PublishCourse = () => {
                 <button disabled={loading}
                     type='button'
                     onClick={goBack}
-                    className="flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900"
+                    className="flex cursor-pointer items-center gap-x-2 rounded-md bg-primaryDark4 py-[8px] px-[20px] font-semibold text-primaryLight"
                 >
                     Back
                 </button>

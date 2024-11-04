@@ -8,31 +8,31 @@ import ReviewSlider from '../components/common/ReviewSlider'
 
 const ContactUs = () => {
   return (
-    <div className=' mt-14 text-white'>
+    <div className=' mt-14 text-primaryDark'>
 
-        <section className='mx-auto mt-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-white lg:flex-row'>
+        <section className='mx-auto mt-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-primaryDark lg:flex-row'>
             {/* left box */}
             <div className=' lg:w-[40%]'>
-                <div className='flex flex-col gap-6 rounded-xl bg-richblack-800 p-4 lg:p-6'>
+                <div className='flex flex-col gap-6 rounded-xl bg-primaryDark p-4 lg:p-6'>
 
-                    <div className='flex flex-col gap-[2px] p-3 text-sm text-richblack-200'>
+                    <div className='flex flex-col gap-[2px] p-3 text-sm text-primaryLight'>
                         <div className='flex flex-row items-center gap-3'>
                             <IoChatbubble/>
-                            <h1 className='text-lg font-semibold text-richblack-5'>Chat on us</h1>
+                            <h1 className='text-lg font-semibold text-primaryLight4'>Chat on us</h1>
                         </div>
 
                         <p className='font-medium'>
                             Our friendly team is here to help.
                         </p>
-                        <p className=' font-semibold'>info@studynotion.com</p>
+                        <p className=' font-semibold'>info@eduverse.com</p>
 
                     </div>
 
 
-                    <div className='flex flex-col gap-[2px] p-3 text-sm text-richblack-200'>
+                    <div className='flex flex-col gap-[2px] p-3 text-sm text-primaryLight'>
                         <div className='flex flex-row items-center gap-3'>
                             <FaEarthAsia/>
-                            <h1 className='text-lg font-semibold text-richblack-5'>Visit us</h1>
+                            <h1 className='text-lg font-semibold text-primaryLight4'>Visit us</h1>
                         </div>
 
                         <p className=' font-medium'>
@@ -45,10 +45,10 @@ const ContactUs = () => {
 
                     </div>
 
-                    <div className='flex flex-col gap-[2px] p-3 text-sm text-richblack-200'>
+                    <div className='flex flex-col gap-[2px] p-3 text-sm text-primaryLight'>
                         <div className='flex flex-row items-center gap-3'>
                             <FaPhoneAlt/>
-                            <h1 className='text-lg font-semibold text-richblack-5'>Call us</h1>
+                            <h1 className='text-lg font-semibold text-primaryLight4'>Call us</h1>
                         </div>
 
                         <p className=' font-medium'>
@@ -73,7 +73,7 @@ const ContactUs = () => {
             </div>
         </section>
 
-        <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-8 bg-richblack-900 text-white">
+        <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-8 bg-primaryDark2 text-primaryLight2">
         {/* Reviws from Other Learner */}
         <h1 className="text-center text-4xl font-semibold mt-8">
           Reviews from other learners

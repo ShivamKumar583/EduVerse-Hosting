@@ -26,7 +26,7 @@ export function MeetingDetailsScreen({
     >
       {iscreateMeetingClicked ? (
         <div className="border border-solid border-gray-400 rounded-xl px-4 py-3  flex items-center justify-center">
-          <p className="text-richblack-100 text-base">
+          <p className=" text-primaryDark text-base">
             {`Meeting code : ${meetingId}`}
           </p>
           <button
@@ -40,9 +40,9 @@ export function MeetingDetailsScreen({
             }}
           >
             {isCopied ? (
-              <FaCheck className="h-5 w-5 text-green-400" />
+              <FaCheck className="h-5 w-5 text-primaryDark3" />
             ) : (
-              <FaClipboard className="h-5 w-5 text-richblack-100" />
+              <FaClipboard className="h-5 w-5 text-primaryDark" />
             )}
           </button>
         </div>
@@ -54,7 +54,7 @@ export function MeetingDetailsScreen({
               setMeetingId(e.target.value);
             }}
             placeholder={"Enter meeting Id"}
-            className="px-4 py-3 bg-gray-650 rounded-xl text-richblack-100 w-full text-center bg-richblack-700"
+            className="px-4 py-3 bg-gray-650 rounded-xl text-primaryLight w-full text-center bg-primaryDark"
           />
           {meetingIdError && (
             <p className="text-xs text-red-600">{`Please enter valid meetingId`}</p>
@@ -68,7 +68,7 @@ export function MeetingDetailsScreen({
             value={participantName}
             onChange={(e) => setParticipantName(e.target.value)}
             placeholder="Enter your name"
-            className="px-4 py-3 mt-5 bg-gray-650 rounded-xl text-richblack-100 w-full text-center bg-richblack-700"
+            className="px-4 py-3 mt-5 bg-gray-650 rounded-xl text-primaryLight w-full text-center bg-primaryDark"
           />
 
           {/* <p className="text-xs text-richblack-100 mt-1 text-center">
@@ -77,7 +77,7 @@ export function MeetingDetailsScreen({
           <button
             disabled={participantName.length < 3}
             className={`w-full ${participantName.length < 3 ? "bg-gray-650" : "bg-purple-350"
-              }  text-richblack-100 px-2 py-3 rounded-xl mt-5`}
+              }  text-primaryDark bg-primaryLight4 px-2 py-3 rounded-xl mt-5`}
             onClick={(e) => {
               if (iscreateMeetingClicked) {
                 onClickStartMeeting();
@@ -97,7 +97,7 @@ export function MeetingDetailsScreen({
         <div className="w-full md:mt-0 mt-4 flex flex-col">
           <div className="flex items-center justify-center flex-col w-full ">
             { user.accountType === 'Instructor' && <button
-              className="w-full bg-richblack-700 text-richblack-100 px-2 py-3 rounded-xl"
+              className="w-full bg-primaryDark text-primaryLight px-2 py-3 rounded-xl"
               onClick={async (e) => {
                 const { meetingId, err } = await _handleOnCreateMeeting();
               
@@ -125,7 +125,7 @@ export function MeetingDetailsScreen({
             </button>
             }
             { user.accountType !== 'Instructor' && <button
-              className="w-full bg-gray-650 text-richblack-100 px-2 py-3 rounded-xl mt-5"
+              className="w-full bg-gray-650 text-primaryDark bg-primaryLight4 px-2 py-3 rounded-xl mt-5"
               onClick={(e) => {
                 setIsJoinMeetingClicked(true);
               }}

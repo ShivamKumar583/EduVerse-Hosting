@@ -37,7 +37,7 @@ export default function DropDownSpeaker({ speakers }) {
             });
           })
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       };
       audio.play().catch(error => {
         console.error('Failed to set sinkId:', error);
@@ -56,20 +56,20 @@ export default function DropDownSpeaker({ speakers }) {
               onMouseEnter={() => { setIsHovered(true) }}
               onMouseLeave={() => { setIsHovered(false) }}
               disabled={!isMicrophonePermissionAllowed}
-              className={`focus:outline-none hover:ring-1 hover:ring-gray-250 hover:bg-black 
+              className={`focus:outline-none hover:ring-1 hover:ring-gray-250 hover:bg-primaryDark 
               ${open
-                  ? "text-white ring-1 ring-gray-250 bg-black"
-                  : "text-customGray-250 hover:text-white"
+                  ? "text-primaryLight ring-1 ring-gray-250 bg-primaryDark"
+                  : "text-customGray-250 hover:text-primaryLight"
                 }
               group inline-flex items-center rounded-md px-1 py-1 w-44 text-base font-normal
               ${!isMicrophonePermissionAllowed ? "opacity-50" : ""}`}
             >
-              <DropSpeaker fillColor={isHovered || open ? "#FFF" : "#B4B4B4"} />
+              <DropSpeaker fillColor={isHovered || open ? "#fef5ef" : "#4e374f"} />
               <span className=" overflow-hidden whitespace-nowrap overflow-ellipsis w-28 ml-6">
                 {isMicrophonePermissionAllowed ? selectedSpeaker?.label : "Permission Needed"}
               </span>
               <FaChevronDown
-                className={`${open ? 'text-orange-300' : 'text-orange-300/70'}
+                className={`${open ? ' text-primaryLight' : 'text-primaryDark group-hover:text-primaryLight'}
                 ml-8 h-5 w-5 transition duration-150 ease-in-out group-hover:text-orange-300/80 mt-1`}
                 aria-hidden="true"
               />
@@ -87,14 +87,14 @@ export default function DropDownSpeaker({ speakers }) {
                 <div className="rounded-lg shadow-lg">
                   <div className={"bg-gray-350 rounded-lg"} >
                     <div>
-                      <div className="flex flex-col">
+                      <div className="flex flex-col bg-primaryLight2 rounded-md">
                         {speakers.map(
                           (item, index) => {
                             return (
                               item?.kind === "audiooutput" && (
                                 <div
                                   key={`speaker_${index}`}
-                                  className={` my-1 pl-4 pr-2 text-white text-left flex `} >
+                                  className={` my-1 pl-4 pr-2 text-primaryDark text-left flex `} >
                                   <span className="w-6 mr-2 flex items-center justify-center">
                                     {selectedSpeaker?.label === item?.label && (
                                       <FaCheck className='h-5 w-5' />
@@ -125,7 +125,7 @@ export default function DropDownSpeaker({ speakers }) {
                           }
                         )}
                         {speakers.length && <> <hr className='border border-gray-50 mt-2 mb-1' />
-                          <div className={`my-1 pl-4 pr-2 text-white text-left`} >
+                          <div className={`my-1 pl-4 pr-2 text-primaryLight text-left`} >
                             <button
                               className={`flex flex-1 w-full text-left mb-1 pl-1 focus:outline-none`}
                               onClick={testSpeakers}
@@ -134,9 +134,9 @@ export default function DropDownSpeaker({ speakers }) {
                                 <TestSpeaker />
                               </span>
                               {isPlaying ? <div className="w-52 mt-2 bg-gray-450 rounded-full h-2 dark:bg-gray-700">
-                                <div className="bg-white opacity-50 h-2 rounded-full" style={{ width: `${audioProgress}%` }}></div>
+                                <div className="bg-primaryLight opacity-50 h-2 rounded-full" style={{ width: `${audioProgress}%` }}></div>
                               </div>
-                                : <span>Test Speakers</span>
+                                : <span className=' text-primaryDark'>Test Speakers</span>
                               }
                             </button>
                           </div>

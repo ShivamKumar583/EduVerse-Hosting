@@ -100,11 +100,11 @@ export default function CourseBuilderForm() {
   }
 
   return (
-    <div className="space-y-8 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6">
-      <p className="text-2xl font-semibold text-richblack-5">Course Builder</p>
+    <div className="space-y-8 rounded-md border-[1px] border-primaryDark3 bg-primaryDark p-6">
+      <p className="text-2xl font-semibold text-primaryLight2">Course Builder</p>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="flex flex-col space-y-2">
-          <label className="text-sm text-richblack-5" htmlFor="sectionName">
+          <label className="text-sm text-primaryLight" htmlFor="sectionName">
             Section Name <sup className="text-pink-200">*</sup>
           </label>
           <input
@@ -127,13 +127,13 @@ export default function CourseBuilderForm() {
             text={editSectionName ? "Edit Section Name" : "Create Section"}
             outline={true}
           >
-            <IoAddCircleOutline size={20} className="text-yellow-50" />
+            <IoAddCircleOutline size={20} className="text-primaryLight4" />
           </IconBtn>
           {editSectionName && (
             <button
               type="button"
               onClick={cancelEdit}
-              className="text-sm text-richblack-300 underline"
+              className="text-sm text-primaryLight underline"
             >
               Cancel Edit
             </button>
@@ -147,7 +147,7 @@ export default function CourseBuilderForm() {
       <div className="flex justify-end gap-x-3">
         <button
           onClick={goBack}
-          className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900`}
+          className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-primaryDark4 py-[8px] px-[20px] font-semibold text-primaryLight`}
         >
           Back
         </button>

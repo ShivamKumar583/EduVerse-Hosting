@@ -80,7 +80,7 @@ export const MobileIconButton = ({
               }}
             >
               {badge && (
-                <div class="inline-flex absolute -top-2 -right-3 justify-center items-center w-6 h-6 text-xs font-bold text-white bg-black rounded-full">
+                <div class="inline-flex absolute -top-2 -right-3 justify-center items-center w-6 h-6 text-xs font-bold text-primaryLight bg-primaryDark rounded-full">
                   {badge}
                 </div>
               )}
@@ -124,7 +124,7 @@ export const MobileIconButton = ({
               {buttonText ? (
                 <p
                   className={`${
-                    isFocused ? "text-white" : "text-gray-900"
+                    isFocused ? " text-primaryLight" : " text-primaryLight"
                   } text-sm`}
                 >
                   {buttonText}
@@ -141,8 +141,8 @@ export const MobileIconButton = ({
         } overflow-hidden flex flex-col items-center justify-center pb-1`}
         ref={tooltipRef}
       >
-        <div className={"rounded-md p-1.5 bg-black "}>
-          <p className="text-base text-white ">{tooltipTitle || ""}</p>
+        <div className={"rounded-md p-1.5 bg-primaryLight "}>
+          <p className="text-base text-primaryDark ">{tooltipTitle || ""}</p>
         </div>
       </div>
     </>

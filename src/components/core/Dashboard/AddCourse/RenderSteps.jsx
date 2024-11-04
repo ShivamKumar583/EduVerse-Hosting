@@ -30,11 +30,11 @@ const RenderSteps = () => {
                         <div className="flex flex-col items-center "
               key={item.id}>
                             <button className={` grid cursor-default aspect-square w-[34px] place-items-center rounded-full border-[1px] ${step === item.id 
-                            ? "bg-yellow-900 border-yellow-50 text-yellow-50" 
-                            : "border-richblack-700 bg-richblack-800 text-richblack-300"}  ${step > item.id && "bg-yellow-50 text-yellow-50"}} `}>
+                            ? "bg-primaryDark4 border-primaryDark3 text-primaryLight" 
+                            : "border-primaryDark2 bg-opacity-90 bg-primaryDark text-primaryLight"}  ${step > item.id && "bg-primaryLight4 text-primaryDark4"}} `}>
     
                             {
-                                step > item.id ? (<FaCheck className="font-bold text-richblack-900"/>) :(item.id)
+                                step > item.id ? (<FaCheck className="font-bold text-primaryDark"/>) :(item.id)
                             }
     
                             </button>
@@ -44,7 +44,7 @@ const RenderSteps = () => {
                         <>
                             <div
                             className={`h-[calc(34px/2)] w-[33%]  border-dashed border-b-2 ${
-                            step > item.id  ? "border-yellow-50" : "border-richblack-500"
+                            step > item.id  ? "border-primaryLight4" : "border-primaryDark"
                             } `}
                             ></div>
                         </>
@@ -61,7 +61,7 @@ const RenderSteps = () => {
                         >
                             <p
                             className={`text-sm ${
-                            step >= item.id ? "text-richblack-5" : "text-richblack-500"
+                            step >= item.id ? "text-primaryDark3" : "text-primaryDark"
                             }`}
                             >{item.title}</p>
                         </div>

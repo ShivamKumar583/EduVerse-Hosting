@@ -11,7 +11,7 @@ function TestMic() {
       className="mt-0.5"
     >
       <path
-        stroke="#fff"
+        stroke="#4e374f"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.25"

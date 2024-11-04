@@ -57,12 +57,12 @@ const handleDeleteChip = (chipIndex) => {
 
   return (
     <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor={name}>{label} <sup className="text-pink-200">*</sup></label>
+        <label className="text-sm text-primaryLight" htmlFor={name}>{label} <sup className="text-pink-200">*</sup></label>
         <div className="flex w-full flex-wrap gap-y-2">
             {
                 chips.map((chip , index) => (
                     <div key={index} 
-                    className="m-1 flex items-center rounded-full bg-yellow-400 px-2 py-1 text-sm text-richblack-5">
+                    className="m-1 flex items-center rounded-full bg-primaryDark2 px-2 py-1 text-sm text-primaryLight">
                         {chip}
                         <button type='button' className=' ml-2 focus:outline-none' onClick={() => handleDeleteChip(index)}>
                             <MdClose className=' text-sm'/>

@@ -14,17 +14,17 @@ const ContactUsForm = () => {
     } = useForm();
 
     const submitContactForm = async(data) => {
-        console.log(data)
+        // console.log(data)
         try{
             setLoading(true)
             // const response = await apiConnector('POST' , contactusEndpoint.CONTACT_US_API , data);
 
             const response = {status :'ok'}
-            console.log(response);
+            // console.log(response);
             setLoading(false);
 
         }catch(err){
-            console.log('Error in submitting Contactus Form' , err.message);
+            // console.log('Error in submitting Contactus Form' , err.message);
             setLoading(false);
         }
 
@@ -50,7 +50,7 @@ const ContactUsForm = () => {
             {/* first Name */}
             <div className=' w-[48%]'>
                 <label htmlFor='firstName'>
-                    <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+                    <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-primaryDark">
                     First Name <sup className="text-pink-200">*</sup>
                     </p>
                     <input
@@ -62,7 +62,7 @@ const ContactUsForm = () => {
                     style={{
                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                     }}
-                    className="w-full rounded-[0.5rem] bg-richblack-700 p-[12px] text-richblack-5 "
+                    className="w-full rounded-[0.5rem] bg-primaryDark p-[12px] text-primaryLight "
                     />
                     {
                         errors.firstName && (
@@ -77,7 +77,7 @@ const ContactUsForm = () => {
             {/* last name */}
             <div className='w-[48%]'>
                 <label htmlFor='lastName'>
-                    <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+                    <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-primaryDark">
                     Last Name 
                     </p>
                     <input
@@ -89,7 +89,7 @@ const ContactUsForm = () => {
                     style={{
                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                     }}
-                    className="w-full rounded-[0.5rem] bg-richblack-700 p-[12px] text-richblack-5"
+                    className="w-full rounded-[0.5rem] bg-primaryDark p-[12px] text-primaryLight"
                     />
                     {
                         errors.lastName && (
@@ -106,7 +106,7 @@ const ContactUsForm = () => {
         {/* email */}
         <div>
                 <label htmlFor='email'>
-                    <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+                    <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-primaryDark">
                     Email Address <sup className="text-pink-200">*</sup>
                     </p>
                     <input
@@ -118,7 +118,7 @@ const ContactUsForm = () => {
                     style={{
                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                     }}
-                    className="w-full rounded-[0.5rem] bg-richblack-700 p-[12px] text-richblack-5"
+                    className="w-full rounded-[0.5rem] bg-primaryDark p-[12px] text-primaryLight"
                     />
                     {
                         errors.email && (
@@ -133,14 +133,14 @@ const ContactUsForm = () => {
         {/* phone no. */}
         <div className=' flex flex-col gap-2'>
             <label htmlFor='phonenumber'>
-                <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
-                Message <sup className="text-pink-200">*</sup>
+                <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-primaryDark">
+                Phone No. <sup className="text-pink-200">*</sup>
                 </p>
 
                 <div className=' flex flex-row gap-8'>
                     {/* dropdown */}
                     <div className='flex flex-col gap-2 w-[81px]'>
-                        <select name='dropdown' id='dropdown'  className=' bg-richblack-700 p-3 rounded-md'
+                        <select name='dropdown' id='dropdown'  className=' bg-primaryDark text-primaryLight p-3 rounded-md'
                         {...register('countrycode', {required:true})} 
                         style={{
                     boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
@@ -172,7 +172,7 @@ const ContactUsForm = () => {
                     boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                 }}
                 className="w-full
-                 rounded-[0.5rem] bg-richblack-700 p-[12px] text-richblack-5"
+                 rounded-[0.5rem] bg-primaryDark p-[12px] text-primaryLight"
                 />
 
                 </div>
@@ -192,7 +192,7 @@ const ContactUsForm = () => {
         {/* message box */}
         <div>
             <label htmlFor='message'>
-                <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+                <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-primaryDark">
                 Message <sup className="text-pink-200">*</sup>
                 </p>
                 <textarea
@@ -205,7 +205,7 @@ const ContactUsForm = () => {
                 style={{
                     boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                 }}
-                className="w-full rounded-[0.5rem] bg-richblack-700 p-[12px] text-richblack-5"
+                className="w-full rounded-[0.5rem] bg-primaryDark p-[12px] text-primaryLight"
                 />
                 {
                     errors.message && (
@@ -218,7 +218,7 @@ const ContactUsForm = () => {
         </div>
 
 
-        <button type='submit ' className='rounded-md bg-yellow-50 px-6 py-3 text-center text-[13px] font-bold text-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.18)]  transition-all duration-200 hover:scale-95 hover:shadow-none  disabled:bg-richblack-500 sm:text-[16px] '>
+        <button type='submit ' className='rounded-md bg-primaryLight4 px-6 py-3 text-center text-[13px] font-bold text-primaryDark shadow-[2px_2px_0px_0px_rgba(255,255,255,0.18)]  transition-all duration-200 hover:scale-95 hover:shadow-none  disabled:bg-primaryDark3 sm:text-[16px] '>
                     Send Message
         </button>
 

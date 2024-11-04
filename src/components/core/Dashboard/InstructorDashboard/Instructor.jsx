@@ -22,7 +22,7 @@ const Instructor = () => {
 
             const result = await fetchInstructorCourses(token)
             
-            console.log( '...........', instructorApiData);
+            // console.log( '...........', instructorApiData);
             if(instructorApiData.length){
                 setInstructorData(instructorApiData)
             }
@@ -42,8 +42,8 @@ const Instructor = () => {
   return (
     <div>
         <div className="space-y-2">
-            <h1 className="text-2xl font-bold text-richblack-5">Hi {user?.firstName} 👋</h1>
-            <p className="font-medium text-richblack-200">Let's start something new</p>
+            <h1 className="text-2xl font-bold text-primaryDark">Hi {user?.firstName} 👋</h1>
+            <p className="font-medium text-primaryDark2">Let's start something new</p>
         </div>
 
         {loading ? (<div className='spinnner'></div>) : courses.length > 0 ? (
@@ -53,45 +53,45 @@ const Instructor = () => {
                         {totalAmount > 0 || totalStudent > 0 ? (
                         <InstructorChart courses={instructorData} />
                         ) : (
-                        <div className="flex-1 rounded-md bg-richblack-800 p-6">
-                            <p className="text-lg font-bold text-richblack-5">Visualize</p>
-                            <p className="mt-4 text-xl font-medium text-richblack-50">
+                        <div className="flex-1 rounded-md bg-primaryDark p-6">
+                            <p className="text-lg font-bold text-primaryLight">Visualize</p>
+                            <p className="mt-4 text-xl font-medium text-primaryLight2">
                             Not Enough Data To Visualize
                             </p>
                         </div>
                         )}
                         {/* Total Statistics */}
-                        <div className="flex md:mt-0 mx-auto mt-6 min-w-[300px] flex-col rounded-md bg-richblack-800 p-6">
-                        <p className="text-lg font-bold text-richblack-5">Statistics</p>
+                        <div className="flex md:mt-0 mx-auto mt-6 min-w-[300px] flex-col rounded-md bg-primaryDark p-6">
+                        <p className="text-lg font-bold text-primaryLight">Statistics</p>
                         <div className="mt-4 space-y-4">
                             <div>
-                            <p className="text-lg text-richblack-200">Total Courses</p>
-                            <p className="text-3xl font-semibold text-richblack-50">
+                            <p className="text-lg text-primaryLight">Total Courses</p>
+                            <p className="text-3xl font-semibold text-primaryLight2">
                                 {courses.length}
                             </p>
                             </div>
                             <div>
-                            <p className="text-lg text-richblack-200">Total Students</p>
-                            <p className="text-3xl font-semibold text-richblack-50">
+                            <p className="text-lg text-primaryLight">Total Students</p>
+                            <p className="text-3xl font-semibold text-primaryLight2">
                                 {totalStudent}
                             </p>
                             </div>
                             <div>
-                            <p className="text-lg text-richblack-200">Total Income</p>
-                            <p className="text-3xl font-semibold text-richblack-50">
+                            <p className="text-lg text-primaryLight">Total Income</p>
+                            <p className="text-3xl font-semibold text-primaryLight2">
                                 Rs. {totalAmount}
                             </p>
                             </div>
                         </div>
                         </div>
                     </div>
-                <div className="rounded-md bg-richblack-800 md:mt-0 mt-[200px] p-6">
+                <div className="rounded-md translate-y-7 bg-primaryDark md:mt-0 mt-[200px] p-6">
                     {/* render courses */}
 
                     <div className="flex items-center justify-between">
-                        <p className="text-lg font-bold text-richblack-5">Your Courses</p>
+                        <p className="text-lg font-bold text-primaryLight">Your Courses</p>
                         <Link to="/dashboard/my-courses">
-                            <p className="text-xs font-semibold text-yellow-50">View All</p>
+                            <p className="text-xs font-semibold text-primaryLight3">View All</p>
                         </Link>
                     </div>
 
@@ -106,11 +106,11 @@ const Instructor = () => {
                                     />
 
                                     <div className="mt-3 w-full">
-                                        <p className="text-sm font-medium text-richblack-50">{course.courseName}</p>
+                                        <p className="text-sm font-medium text-primaryLight">{course.courseName}</p>
                                         <div className="mt-1 flex items-center space-x-2">
-                                            <p className="text-xs font-medium text-richblack-300">{course.studentsEnrolled.length}</p>
-                                            <p className="text-xs font-medium text-richblack-300"> | </p>
-                                            <p className="text-xs font-medium text-richblack-300">Rs {course.price}</p>
+                                            <p className="text-xs font-medium text-primaryLight">{course.studentsEnrolled.length}</p>
+                                            <p className="text-xs font-medium text-primaryLight"> | </p>
+                                            <p className="text-xs font-medium text-primaryLight">Rs {course.price}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -120,12 +120,12 @@ const Instructor = () => {
                 </div>
             </div>
         ) : (
-            <div className="mt-20 rounded-md bg-richblack-800 p-6 py-20">
-          <p className="text-center text-2xl font-bold text-richblack-5">
+            <div className="mt-20 rounded-md bg-primaryDark p-6 py-20">
+          <p className="text-center text-2xl font-bold text-primaryLight3">
             You have not created any courses yet
           </p>
           <Link to="/dashboard/add-course">
-            <p className="mt-1 text-center text-lg font-semibold text-yellow-50">
+            <p className="mt-1 text-center text-lg font-semibold text-primaryLight">
               Create a course
             </p>
           </Link>

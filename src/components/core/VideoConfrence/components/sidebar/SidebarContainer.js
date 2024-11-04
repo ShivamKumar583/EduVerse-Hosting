@@ -23,7 +23,7 @@ const SideBarTabView = ({
 
   return (
     <div
-      className="bg-gray-800"
+      className=" bg-primaryDark"
       style={{
         height,
         width: sideBarContainerWidth,
@@ -52,7 +52,7 @@ const SideBarTabView = ({
                   borderBottom: "1px solid #70707033",
                 }}
               >
-                <p className="text-base text-white font-bold">
+                <p className="text-base  text-primaryLight font-bold">
                   {sideBarMode === "PARTICIPANTS"
                     ? `${
                         sideBarMode.charAt(0).toUpperCase() +
@@ -62,7 +62,7 @@ const SideBarTabView = ({
                         sideBarMode.slice(1).toLowerCase() || ""}
                 </p>
                 <button
-                  className="text-white"
+                  className=" text-primaryLight"
                   onClick={handleClose}
                   style={{ margin: 0, padding: 0 }}
                 >

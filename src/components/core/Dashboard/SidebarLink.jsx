@@ -14,9 +14,9 @@ const SidebarLink = ({link , iconName}) => {
     }
 
   return (
-    <NavLink to={link.path} className={` relative px-8 py-2 text-sm font-medium ${matchRoute(link.path) ? ' bg-yellow-800' : 'bg-opacity-0'}`}>
+    <NavLink to={link.path} className={` relative px-8 py-2 text-sm font-medium ${matchRoute(link.path) ? ' bg-primaryLight bg-opacity-25' : 'bg-opacity-0'}`}>
  
-        <span className={`absolute left-0 top-0 h-full w-[0.2rem] bg-yellow-50 ${matchRoute(link.path) ? 'opacity-100' : ' opacity-0'}`}>
+        <span className={`absolute left-0 top-0 h-full w-[0.2rem] bg-primaryLight4 ${matchRoute(link.path) ? 'opacity-100' : ' opacity-0'}`}>
 
         </span>
 

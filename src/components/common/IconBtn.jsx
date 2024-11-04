@@ -5,12 +5,12 @@ const IconBtn = ({
 }) => {
   return (
     <button onClick={onclick} disabled = {disabled} type={type} className={`flex items-center ${
-        outline ? "border border-yellow-50 bg-transparent" : "bg-yellow-50"
-      } cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900 ${className}`}>
+        outline ? "border border-primaryLight3 bg-transparent" : "bg-primaryLight3"
+      } cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-primaryDark4 ${className}`}>
     {
         children ? (
             <>
-                <span className={`${outline && "text-yellow-50"}`}>
+                <span className={`${outline && "text-primaryLight4"}`}>
                     {text}
                 </span>
                 {children}

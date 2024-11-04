@@ -19,10 +19,10 @@ const ScheduleSession = () => {
         const fetchInstructors = async () => {
             try{ 
                 const response = await getInstructors(token);
-                console.log(response);
+                // console.log(response);
                 setMentors(response);
             }catch(error){
-                console.log("Could not fetch available instructor")
+                // console.log("Could not fetch available instructor")
             }
         };
         fetchInstructors();
@@ -32,9 +32,9 @@ const ScheduleSession = () => {
         const response = await createSession(token ,currMentor ,selectedDate);
 
         if(response.success){
-          console.log('Session Created Successfully')
+          // console.log('Session Created Successfully')
         }else{
-          console.log('Error checking availability:', response);
+          // console.log('Error checking availability:', response);
         }
     }
 
@@ -45,20 +45,20 @@ const ScheduleSession = () => {
 
   return (
     <>
-        <div className="text-3xl text-richblack-50 ml-12 md:ml-0">Schedule A Session</div>
+        <div className="text-3xl text-primaryDark ml-12 md:ml-0">Schedule A Session</div>
         {!mentors ? (
             <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
             <div className="spinner"></div>
             </div>
         ) : !mentors.length ? (
-            <p className="grid h-[10vh] w-full place-content-center text-richblack-5">
+            <p className="grid h-[10vh] w-full place-content-center text-primaryDark3">
                 Instructors are not available.
             {/* TODO: Modify this Empty State */}
             </p>
         ) : (
-        <div className="my-8 text-richblack-5">
+        <div className="my-8 text-primaryLight">
           {/* Headings */}
-          <div className="flex rounded-t-lg bg-richblack-500 ">
+          <div className="flex rounded-t-lg bg-primaryDark ">
             <p className="w-1/3 px-5 py-3">Instructor Name</p>
             <p className="w-1/3 px-2 py-3">Expertise</p>
             <p className="w-1/3 flex-1 px-2 py-3">Book a session</p>
@@ -66,7 +66,7 @@ const ScheduleSession = () => {
           {/* mentors Names */}
           {mentors.map((mentor, i, arr) => (
             <div
-              className={`flex items-center border border-richblack-700 ${
+              className={`flex items-center border border-primaryDark4 ${
                 i === arr.length - 1 ? "rounded-b-lg" : "rounded-none"
               }`}
               key={i}
@@ -81,12 +81,12 @@ const ScheduleSession = () => {
                 />
                 <div className="flex max-w-xs flex-col gap-2">
                   <p className="font-semibold">{mentor.firstName} {mentor.lastName}</p>
-                  <p className="text-xs text-richblack-300">No. of Courses : {" "}
+                  <p className="text-xs text-primaryDark">No. of Courses : {" "}
                     {mentor?.courses.length || 0 }
                   </p>
                 </div>
               </div>
-              <div className="w-1/4 px-2 py-3">{mentor?.expertise.length > 3 ? 
+              <div className="w-1/4 px-2 py-3 text-primaryDark">{mentor?.expertise.length > 3 ? 
                 mentor?.expertise?.splice(0,3).map((field,index) => (
                     <p key={index}>{field}</p>
                 ))
@@ -96,7 +96,7 @@ const ScheduleSession = () => {
               }</div>
               <div className="flex flex-col gap-2 px-2 py-3">
                 <button
-                    className=' bg-yellow-50 m-3 w-fit text-black font-semibold rounded-md cursor-pointer'
+                    className=' bg-primaryDark4 m-3 w-fit p-1 text-primaryLight3 font-semibold rounded-md cursor-pointer'
                     onClick={() => (setData(mentor))}
                 >
                   <span>Schedule a session</span>

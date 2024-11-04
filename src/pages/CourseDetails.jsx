@@ -38,15 +38,15 @@ function CourseDetails() {
     ;(async () => {
       try {
         const res = await fetchCourseDetails(courseId)
-        // console.log("course details res: ", res)
+        // //("course details res: ", res)
         setResponse(res)
       } catch (error) {
-        console.log("Could not fetch Course Details")
+        //("Could not fetch Course Details")
       }
     })()
   }, [courseId])
 
-  console.log("response: ", response)
+  //("response: ", response)
 
   // Calculating Avg Review count
   const [avgReviewCount, setAvgReviewCount] = useState(0)
@@ -135,7 +135,7 @@ function CourseDetails() {
   }
 
   if (paymentLoading) {
-    // console.log("payment loading")
+    // //("payment loading")
     return (
       <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
         <div className="spinner"></div>
@@ -145,7 +145,7 @@ function CourseDetails() {
 
   return (
     <>
-      <div className={`relative w-full bg-richblack-800`}>
+      <div className={`relative w-full bg-primaryDark4`}>
         {/* Hero Section */}
         <div className="mx-auto box-content px-4 lg:w-[1260px] 2xl:relative ">
           <div className="mx-auto grid min-h-[450px] max-w-maxContentTab justify-items-center py-8 lg:mx-0 lg:justify-items-start lg:py-0 xl:max-w-[810px]">
@@ -158,16 +158,16 @@ function CourseDetails() {
               />
             </div>
             <div
-              className={`z-30 my-5 flex flex-col justify-center gap-4 py-5 text-lg text-richblack-5`}
+              className={`z-30 my-5 flex flex-col justify-center gap-4 py-5 text-lg text-primaryLight2`}
             >
               <div>
-                <p className="text-4xl font-bold text-richblack-5 sm:text-[42px]">
+                <p className="text-4xl font-bold text-primaryLight3 sm:text-[42px]">
                   {courseName}
                 </p>
               </div>
-              <p className={`text-richblack-200`}>{courseDescription}</p>
+              <p className={`text-primaryLight2`}>{courseDescription}</p>
               <div className="text-md flex flex-wrap items-center gap-2">
-                <span className="text-yellow-25">{avgReviewCount}</span>
+                <span className="text-primaryLight2">{avgReviewCount}</span>
                 <RatingStars Review_Count={avgReviewCount} Star_Size={24} />
                 <span>{`(${ratingAndReviews.length} reviews)`}</span>
                 <span>{`${studentsEnrolled.length} students enrolled`}</span>
@@ -189,10 +189,10 @@ function CourseDetails() {
               </div>
             </div>
             <div className="flex w-full flex-col gap-4 border-y border-y-richblack-500 py-4 lg:hidden">
-              <p className="space-x-3 pb-4 text-3xl font-semibold text-richblack-5">
+              <p className="space-x-3 pb-4 text-3xl font-semibold text-primaryLight3">
                 Rs. {price}
               </p>
-              <button className="yellowButton rounded-md px-3 py-2 bg-yellow-50 text-richblack-900" onClick={
+              <button className="yellowButton rounded-md px-3 py-2 bg-primaryLight4 text-primaryDark" onClick={
                 user && studentsEnrolled.includes(user?._id)
                   ? () => navigate("/dashboard/enrolled-courses")
                   : handleBuyCourse
@@ -202,7 +202,7 @@ function CourseDetails() {
                 : "Buy Now"}
               </button>
               {(!user || studentsEnrolled.includes(user?._id)) && (
-              <button onClick={handleAddToCart} className="blackButton bg-yellow-50 px-3 py-2 rounded-md text-richblack-900">
+              <button onClick={handleAddToCart} className="blackButton bg-primaryLight4 px-3 py-2 rounded-md text-primaryDark">
                 Add to Cart
               </button>
             )}
@@ -218,10 +218,10 @@ function CourseDetails() {
           </div>
         </div>
       </div>
-      <div className="mx-auto box-content px-4 text-start text-richblack-5 lg:w-[1260px]">
+      <div className="mx-auto box-content px-4 text-start text-primaryDark lg:w-[1260px]">
         <div className="mx-auto max-w-maxContentTab lg:mx-0 xl:max-w-[810px]">
           {/* What will you learn section */}
-          <div className="my-8 border border-richblack-600 p-8">
+          <div className="my-8 border border-primaryDark p-8">
             <p className="text-3xl font-semibold">What you'll learn</p>
             <div className="mt-5">
               <p>{whatYouWillLearn}</p>
@@ -244,7 +244,7 @@ function CourseDetails() {
                 </div>
                 <div>
                   <button
-                    className="text-yellow-25"
+                    className="text-primaryDark3"
                     onClick={() => setIsActive([])}
                   >
                     Collapse all sections
@@ -280,7 +280,7 @@ function CourseDetails() {
                 />
                 <p className="text-lg">{`${instructor.firstName} ${instructor.lastName}`}</p>
               </div>
-              <p className="text-richblack-50">
+              <p className="text-primaryDark">
                 {instructor?.additionalDetails?.about}
               </p>
             </div>

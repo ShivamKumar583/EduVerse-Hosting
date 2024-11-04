@@ -50,7 +50,7 @@ const ChangeProfilePicture = () => {
             })
 
         }catch(error){
-            console.log("ERROR MESSAGE - ", error.message)
+            // console.log("ERROR MESSAGE - ", error.message)
         }
     }
 
@@ -62,12 +62,12 @@ const ChangeProfilePicture = () => {
 
   return (
     <>
-        <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12 text-richblack-5">
+        <div className="flex items-center justify-between rounded-md border-[1px] border-primaryDark3 bg-primaryDark p-8 px-12 text-primaryLight">
             <div className="flex items-center gap-x-6">
                 <img
                     src={previewSource || user?.image}
                     alt={`profile-${user?.firstName}`}
-                    className="aspect-square w-[78px] rounded-full object-cover border-richblack-300 border-2"
+                    className="aspect-square w-[78px] rounded-full object-cover border-primaryLight border-2"
                 />
 
                 <div className="space-y-3">
@@ -85,12 +85,12 @@ const ChangeProfilePicture = () => {
                         <button
                         onClick={handleClick}
                         disabled={loading}
-                        className= 'cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50'
+                        className= 'cursor-pointer rounded-md bg-primaryDark4 py-2 px-5 font-semibold text-primaryLight'
                         >Select</button>
 
                         <button
                            onClick={handleFileUpload} 
-                           className="flex items-center cursor-pointer gap-1 text-base font-medium text-richblack-900 bg-yellow-50 rounded-md px-3"
+                           className="flex items-center cursor-pointer gap-1 text-base font-medium text-primaryDark bg-primaryLight3 rounded-md px-3"
                         >
                             <div>Upload</div>
                             <FiUpload/>

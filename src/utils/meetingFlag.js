@@ -12,7 +12,7 @@ const MeetingFlag = async({isMeetingStarted , meetingId}) => {
 
         return response;
     }catch(err){    
-        console.log(err)
+        //(err)
     }
   }
 }

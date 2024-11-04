@@ -12,7 +12,7 @@ function TestMicOff() {
     >
       <g clipPath="url(#clip0_209_115)">
         <path
-          stroke="#747B84"
+          stroke="#4e374f"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.25"

@@ -7,7 +7,7 @@ import DeleteAccount from './DeleteAccount'
 const Settings = () => {
   return (
     <>
-      <h1 className='mb-14 text-3xl font-medium text-richblack-5 ml-[15%]'>Edit Profile</h1>
+      <h1 className='mb-14 text-3xl font-medium text-primaryDark ml-[15%]'>Edit Profile</h1>
       
       {/* Change Profile Picture */}
       <ChangeProfilePicture/>

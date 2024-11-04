@@ -12,7 +12,7 @@ function PauseButton() {
     >
       <g clipPath="url(#clip0_20_538)">
         <path
-          stroke="#fff"
+          stroke="#4e374f"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.25"

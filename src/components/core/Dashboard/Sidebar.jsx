@@ -30,13 +30,13 @@ const Sidebar = () => {
     <div>
       {active ? (
         <div className="block z-20 absolute md:relative">
-          <div className="flex h-[calc(100vh-3.5rem)] min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10 text-richblack-25">
+          <div className="flex h-[calc(100vh-3.5rem)] min-w-[220px] flex-col border-r-[1px] border-r-primaryDark bg-primaryDark4 py-10 text-primaryLight2">
             <div className="flex flex-col">
               <div
                 onClick={() => setActive(!active)}
                 className="flex justify-end pr-4 pb-10"
               >
-                <AiOutlineDoubleLeft className="text-yellow-50 text-4xl" />
+                <AiOutlineDoubleLeft className={`${active ? ' text-primaryLight2' : ' text-primaryDark4'}  text-4xl`} />
               </div>
               {sidebarLinks.map((link) => {
                 if (link.type && user?.accountType !== link.type) return null;
@@ -62,7 +62,7 @@ const Sidebar = () => {
                     btn2Handler: () => setConfirmationModal(null),
                   })
                 }
-                className="px-8 py-2 text-sm font-medium text-richblack-300"
+                className="px-8 py-2 text-sm font-medium text-primaryLight2"
               >
                 <div className="flex items-center gap-x-2">
                   <VscSignOut className="text-lg" />
@@ -81,7 +81,7 @@ const Sidebar = () => {
             onClick={() => setActive(!active)}
             className="flex justify-end"
           >
-            <AiOutlineDoubleRight className="text-yellow-50 text-4xl z-50" />
+            <AiOutlineDoubleRight className="text-primaryDark text-4xl z-50" />
           </div>
         </div>
       )}

@@ -57,10 +57,17 @@ export const sidebarLinks = [
   },
   {
     id: 9,
-    name: "Upcoming Session",
+    name: "Join Session",
     path: "/dashboard/join-session",
     type: ACCOUNT_TYPE.STUDENT,
     icon: "VscVmConnect",
+  },
+  {
+    id: 10,
+    name: "Cart",
+    path: "/dashboard/cart",
+    type: ACCOUNT_TYPE.STUDENT,
+    icon: "VscArchive",
   },
   
 ];

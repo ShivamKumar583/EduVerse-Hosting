@@ -51,7 +51,7 @@ function   CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) 
   return (
     <>
       <div
-        className={`flex flex-col gap-4 rounded-md bg-richblack-700 p-4 text-richblack-5`}
+        className={`flex flex-col gap-4 rounded-md bg-primaryLight2 p-4 text-primaryDark`}
       >
         {/* Course Image */}
         <img
@@ -66,7 +66,7 @@ function   CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) 
           </div>
           <div className="flex flex-col gap-4">
             <button
-              className="yellowButton rounded-md px-3 py-2 bg-yellow-50 text-richblack-900"
+              className="yellowButton rounded-md px-3 py-2 bg-primaryLight4 text-primaryDark"
               onClick={
                 user && course?.studentsEnrolled.includes(user?._id)
                   ? () => navigate("/dashboard/enrolled-courses")
@@ -78,13 +78,13 @@ function   CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) 
                 : "Buy Now"}
             </button>
             {(!user || !course?.studentsEnrolled.includes(user?._id)) && (
-              <button onClick={handleAddToCart} className="blackButton bg-yellow-50 px-3 py-2 rounded-md text-richblack-900">
+              <button onClick={handleAddToCart} className="blackButton bg-primaryLight4 px-3 py-2 rounded-md text-primaryDark">
                 Add to Cart
               </button>
             )}
           </div>
           <div>
-            <p className="pb-3 pt-6 text-center text-sm text-richblack-25">
+            <p className="pb-3 pt-6 text-center text-sm text-primaryDark">
               30-Day Money-Back Guarantee
             </p>
           </div>
@@ -93,7 +93,7 @@ function   CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) 
             <p className={`my-2 text-xl font-semibold `}>
               This Course Includes :
             </p>
-            <div className="flex flex-col gap-3 text-sm text-caribbeangreen-100">
+            <div className="flex flex-col gap-3 text-sm text-primaryDark3">
               {course?.instructions?.map((item, i) => {
                 return (
                   <p className={`flex gap-2`} key={i}>
@@ -106,7 +106,7 @@ function   CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) 
           </div>
           <div className="text-center">
             <button
-              className="mx-auto flex items-center gap-2 py-6 text-yellow-100 "
+              className="mx-auto flex items-center gap-2 py-6 text-primaryDark "
               onClick={handleShare}
             >
               <FaShareSquare size={15} /> Share

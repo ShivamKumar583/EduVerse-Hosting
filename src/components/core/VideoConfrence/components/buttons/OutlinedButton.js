@@ -98,7 +98,7 @@ export const OutlinedButton = ({
       >
         <div
           className={`flex items-center justify-center  rounded-lg ${
-            bgColor ? `${bgColor}` : isFocused ? "bg-white" : "bg-gray-750"
+            bgColor ? `${bgColor}` : isFocused ? " bg-primaryDark" : "bg-primaryDark"
           } ${
             mouseOver
               ? "border-2 border-transparent border-solid"
@@ -189,7 +189,7 @@ export const OutlinedButton = ({
                     {badge && (
                       <p
                         className={`${
-                          isFocused ? "text-black" : "text-white"
+                          isFocused ? " text-primaryLight" : "text-primaryDark"
                         } text-base ml-2`}
                       >
                         {badge}
@@ -199,7 +199,7 @@ export const OutlinedButton = ({
                 ))}
             </div>
             {buttonText ? (
-              <p className="text-sm text-white font-semibold mr-2 text-center">
+              <p className="text-sm text-primaryDark font-semibold mr-2 text-center">
                 {buttonText}
               </p>
             ) : null}
@@ -214,8 +214,8 @@ export const OutlinedButton = ({
         } overflow-hidden flex flex-col items-center justify-center whitespace-pre-line`}
         ref={tooltipRef}
       >
-        <div className={"rounded-md p-1.5 bg-black "}>
-          <p className="text-base text-white ">{tooltip || ""}</p>
+        <div className={"rounded-md p-1.5 bg-primaryDark "}>
+          <p className="text-base text-primaryLight ">{tooltip || ""}</p>
         </div>
       </div>
     </>

@@ -19,7 +19,7 @@ function RecordingIcon(props) {
         y="0"
         maskUnits="userSpaceOnUse"
       >
-        <path fill="#D9D9D9" d="M0 0H24V24H0z"></path>
+        <path fill="#4e374f" d="M0 0H24V24H0z"></path>
       </mask>
       <g mask="url(#mask0_24_98)">
         <circle cx="12" cy="12" r="5" fill={props.fillcolor}></circle>

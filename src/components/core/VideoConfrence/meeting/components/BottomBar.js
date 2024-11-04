@@ -107,7 +107,7 @@ function PipBTN({ isMobile, isTab }) {
             }
           }
         } catch (error) {
-          console.log(error);
+          //(error);
         }
 
         //If pip mode is on, keep drawing the canvas when ever new frame is requested
@@ -190,7 +190,7 @@ const MicBTN = () => {
       <OutlinedButton
         Icon={localMicOn ? MicOnIcon : MicOffIcon}
         onClick={() => { mMeeting.toggleMic() }}
-        bgColor={localMicOn ? "bg-gray-750" : "bg-white"}
+        bgColor={localMicOn ? "bg-primaryDark" : "bg-primaryLight4"}
         borderColor={localMicOn && "#ffffff33"}
         isFocused={localMicOn}
         focusIconColor={localMicOn && "white"}
@@ -230,7 +230,7 @@ const MicBTN = () => {
                     >
                       <Popover.Panel className="absolute left-1/2 bottom-full z-10 mt-3 w-72 -translate-x-1/2 transform px-4 sm:px-0 pb-4">
                         <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                          <div className={" bg-gray-750 py-1"}>
+                          <div className={" bg-primaryDark py-1"}>
                             <div>
                               <div className="flex items-center p-3 pb-0">
                                 <p className="ml-3 text-sm text-gray-900">
@@ -240,13 +240,13 @@ const MicBTN = () => {
                               <div className="flex flex-col">
                                 {mics.map(({ deviceId, label }, index) => (
                                   <div
-                                    className={`px-3 py-1 my-1 pl-6 text-white text-left ${deviceId === selectedMic.id &&
-                                      "bg-gray-150"
+                                    className={`px-3 py-1 my-1 pl-6 text-primaryLight text-left ${deviceId === selectedMic.id &&
+                                      "bg-primaryDark"
                                       }`}
                                   >
                                     <button
                                       className={`flex flex-1 w-full text-left ${deviceId === selectedMic.id &&
-                                        "bg-gray-150"
+                                        "bg-primaryDark"
                                         }`}
                                       key={`mics_${deviceId}`}
                                       onClick={() => {
@@ -271,13 +271,13 @@ const MicBTN = () => {
                               <div className="flex flex-col ">
                                 {speakers.map(({ deviceId, label }, index) => (
                                   <div
-                                    className={`px-3 py-1 my-1 pl-6 text-white ${deviceId === selectedSpeaker.id &&
-                                      "bg-gray-150"
+                                    className={`px-3 py-1 my-1 pl-6 text-primaryLight ${deviceId === selectedSpeaker.id &&
+                                      "bg-primaryDark"
                                       }`}
                                   >
                                     <button
                                       className={`flex flex-1 w-full text-left ${deviceId === selectedSpeaker.id &&
-                                        "bg-gray-150"
+                                        "bg-primaryDark"
                                         }`}
                                       key={`speakers_${deviceId}`}
                                       onClick={() => {
@@ -306,8 +306,8 @@ const MicBTN = () => {
                   } overflow-hidden flex flex-col items-center justify-center pb-4`}
                 ref={tooltipRef}
               >
-                <div className={"rounded-md p-1.5 bg-black "}>
-                  <p className="text-base text-white ">
+                <div className={"rounded-md p-1.5 bg-primaryDark "}>
+                  <p className="text-base text-primaryLight ">
                     {"Change microphone"}
                   </p>
                 </div>
@@ -366,7 +366,7 @@ const WebCamBTN = () => {
           }
           mMeeting.toggleWebcam(track);
         }}
-        bgColor={localWebcamOn ? "bg-gray-750" : "bg-white"}
+        bgColor={localWebcamOn ? "bg-primaryDark" : "bg-primaryLight4"}
         borderColor={localWebcamOn && "#ffffff33"}
         isFocused={localWebcamOn}
         focusIconColor={localWebcamOn && "white"}
@@ -450,8 +450,8 @@ const WebCamBTN = () => {
                   } overflow-hidden flex flex-col items-center justify-center pb-4`}
                 ref={tooltipRef}
               >
-                <div className={"rounded-md p-1.5 bg-black "}>
-                  <p className="text-base text-white ">{"Change webcam"}</p>
+                <div className={"rounded-md p-1.5 bg-primaryDark "}>
+                  <p className="text-base text-primaryLight ">{"Change webcam"}</p>
                 </div>
               </div>
             </>
@@ -614,7 +614,7 @@ export function BottomBar({
     return (
       <OutlinedButton
         Icon={EndIcon}
-        bgColor="bg-red-150"
+        bgColor="bg-pink-200"
         onClick={() => {
           leave();
           setIsMeetingLeft(true);
@@ -688,7 +688,7 @@ export function BottomBar({
     return (
       <div className="flex items-center justify-center lg:ml-0 ml-4 mt-4 xl:mt-0">
         <div className="flex border-2 border-gray-850 p-2 rounded-md items-center justify-center">
-          <h1 className=" text-richblack-700 text-base ">{meetingId}</h1>
+          <h1 className=" text-primaryDark3 text-base ">{meetingId}</h1>
           <button
             className="ml-2"
             onClick={() => {
@@ -700,9 +700,9 @@ export function BottomBar({
             }}
           >
             {isCopied ? (
-              <FaCheck className="h-5 w-5 text-green-400" />
+              <FaCheck className="h-5 w-5 text-primaryDark3" />
             ) : (
-              <FaClipboard className="h-5 w-5 text-white" />
+              <FaClipboard className="h-5 w-5 text-primaryDark3" />
             )}
           </button>
         </div>
@@ -789,7 +789,7 @@ export function BottomBar({
             <div className="fixed inset-0 overflow-y-hidden">
               <div className="flex h-full items-end justify-end text-center">
                 <Dialog.Panel className="w-screen transform overflow-hidden bg-gray-800 shadow-xl transition-all">
-                  <div className="grid container bg-richblack-100 rounded-lg py-6">
+                  <div className="grid container bg-primaryDark rounded-lg py-6">
                     <div className="grid grid-cols-12 gap-2">
                       {otherFeatures.map(({ icon ,index}) => {
                         return (

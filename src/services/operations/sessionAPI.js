@@ -16,7 +16,7 @@ export async function getInstructors(token){
                 }
             )
 
-            console.log(response.data.data)
+            //(response.data.data)
 
             if (!response.data.success) {
                 throw new Error(response.data.message)
@@ -24,7 +24,7 @@ export async function getInstructors(token){
             result = response.data.data
 
         }catch(error){
-            console.log("GET_USER_ENROLLED_COURSES_API API ERROR............", error)
+            //("GET_USER_ENROLLED_COURSES_API API ERROR............", error)
             toast.error("Could Not Get Enrolled Courses")
 
         }
@@ -43,15 +43,15 @@ export async function getInstructorsSession(token){
                 } 
             )
 
-            console.log(response.data.data)
-
+            //(response.data.data)
+ 
             if (!response.data.success) {
                 throw new Error(response.data.message)
             }
             result = response.data.data
 
-        }catch(error){
-            console.log("GET_ALL_INSTRUCTOR_SESSION_API ERROR............", error)
+        }catch(error){ 
+            //("GET_ALL_INSTRUCTOR_SESSION_API ERROR............", error)
             toast.error("Could Not Get Session for Instructor")
         }
         toast.dismiss(toastId)
@@ -63,7 +63,7 @@ export async function getInstructorsSession(token){
 export async function createSession(token , InstructorId , date){
     const toastId = toast.loading("Loading...")
     let result = []
-    console.log(token)
+    //(token)
     try{    
         const response = await apiConnector('POST' , CREATE_SESSION_API,{InstructorId ,date},
             {
@@ -71,7 +71,7 @@ export async function createSession(token , InstructorId , date){
             }
         )
 
-        console.log(response)
+        //(response)
 
         if (!response.data.success) {
             throw new Error(response.data.message)
@@ -79,7 +79,7 @@ export async function createSession(token , InstructorId , date){
         result = response.data
 
     }catch(error){
-        console.log("CREATE_SESSION_API API ERROR............", error)
+        //("CREATE_SESSION_API API ERROR............", error)
 
         if(error.response.data.message === 'Instructor is already booked for the specified date and time.'){
             toast.error('Instructor is already booked for the specified date and time.')
@@ -99,12 +99,12 @@ export async function createSession(token , InstructorId , date){
 export async function joinMeeting(token , sessionData ,meetingId){
     const toastId = toast.loading("Loading...")
     let result = []
-    console.log(token)
+    //(token)
     try{    
         const response = await apiConnector('POST' , JOIN_MEETING_API,{sessionData ,meetingId},
         )
 
-        console.log(response)
+        //(response)
 
         if (!response.data.success) {
             throw new Error(response.data.message)
@@ -114,7 +114,7 @@ export async function joinMeeting(token , sessionData ,meetingId){
 
 
     }catch(error){
-        console.log("JOIN_MEETING_API API ERROR............", error)
+        //("JOIN_MEETING_API API ERROR............", error)
 
     }
     toast.dismiss(toastId)

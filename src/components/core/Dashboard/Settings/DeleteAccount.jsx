@@ -15,8 +15,8 @@ const DeleteAccount = () => {
             dispatch(deleteProfile(token , navigate))
 
         }catch(error){
-            console.log('ERROR IN DELETING ACCOUNT')
-            console.log("ERROR MESSAGE - ", error.message)
+            // console.log('ERROR IN DELETING ACCOUNT')
+            // console.log("ERROR MESSAGE - ", error.message)
         }
     }
 

@@ -40,7 +40,7 @@ const EditCourse = () => {
         <h1 className="mb-14 text-3xl font-medium text-richblack-5 ml-[15%] ">Edit Course</h1>
         <div className="mx-auto max-w-[600px]">
             {
-                course ? (<RenderSteps/>) : (<p  className="mt-14 text-center text-3xl font-semibold text-richblack-100">Course Not Found</p>)
+                course ? (<RenderSteps/>) : (<p  className="mt-14 text-center text-3xl font-semibold text-primaryDark">Course Not Found</p>)
             }
         </div>
 

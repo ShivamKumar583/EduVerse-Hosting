@@ -266,7 +266,7 @@ export function JoiningScreen({
         getDefaultMediaTracks({ mic: false, webcam: true });
       }
     } catch (ex) {
-      console.log("Error in requestPermission ", ex);
+      //("Error in requestPermission ", ex);
     }
   }
   function onDeviceChanged() {
@@ -313,7 +313,7 @@ export function JoiningScreen({
         });
       }
     } catch (err) {
-      console.log("Error in getting camera devices", err);
+      //("Error in getting camera devices", err);
     }
   };
 
@@ -334,7 +334,7 @@ export function JoiningScreen({
         });
       }
     } catch (err) {
-      console.log("Error in getting audio devices", err);
+      //("Error in getting audio devices", err);
     }
   };
 
@@ -347,12 +347,12 @@ export function JoiningScreen({
             ref={btnRef}
             onClick={onClick}
             className={`rounded-full min-w-auto w-12 h-12 flex items-center justify-center 
-            ${onState ? "bg-white" : "bg-red-650 text-white"}`}
+            ${onState ? " bg-primaryLight" : "bg-primaryLight text-white"}`}
           >
             {onState ? (
-              <OnIcon fillcolor={onState ? "#050A0E" : "#fff"} />
+              <OnIcon fillcolor={onState ? "#4e374f" : "#d063d6"} />
             ) : (
-              <OffIcon fillcolor={onState ? "#050A0E" : "#fff"} />
+              <OffIcon fillcolor={onState ? "#4e374f" : "#d063d6"} />
             )}
           </button>
         </div>
@@ -427,9 +427,9 @@ export function JoiningScreen({
 
                     {!isMobile && (
                       <>
-                        <div className="absolute top-2 right-10">
+                        {/* <div className="absolute top-2 right-10">
                           <NetworkStats />
-                        </div>
+                        </div> */}
 
                         <div className="flex mt-3">
                           <DropDown

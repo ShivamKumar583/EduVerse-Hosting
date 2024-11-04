@@ -30,7 +30,7 @@ const NetworkStats = ({ }) => {
       if (ex === "Not able to get NetworkStats due to timeout") {
         setError("timeout")
       }
-      console.log("Error in networkStats: ", ex);
+      // //("Error in networkStats: ", ex);
     }
   }
   

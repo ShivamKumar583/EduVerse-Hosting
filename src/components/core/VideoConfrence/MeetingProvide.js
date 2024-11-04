@@ -27,22 +27,22 @@ function App() {
   ).matches;
   
   const {sessionData} = useSelector((state) => state.meeting)
-  console.log(sessionData)
+  // console.log(sessionData)
   useEffect(() => {
 
     const MeetingFlag = async() => {
-      console.log(token) 
-      console.log(isMeetingStarted) 
-      console.log(meetingId)
-      console.log(sessionData)
+      // console.log(token) 
+      // console.log(isMeetingStarted) 
+      // console.log(meetingId)
+      // console.log(sessionData)
 
     if(isMeetingStarted){
       try{
           const response = await joinMeeting(token,sessionData,meetingId);
-          console.log(response);
+          // console.log(response);
           return response;
       }catch(err){    
-          console.log(err)
+          // console.log(err)
       }
     }
   }

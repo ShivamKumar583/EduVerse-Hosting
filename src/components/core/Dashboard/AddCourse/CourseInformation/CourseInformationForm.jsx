@@ -147,7 +147,7 @@ import Upload from '../Upload'
 
     setLoading(true)
     const result = await addCourseDetails(formData, token)
-    console.log(result)
+    // console.log(result)
     if (result) {
       dispatch(setStep(2))
       dispatch(setCourse(result))
@@ -156,11 +156,11 @@ import Upload from '../Upload'
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmitForm)} className=' rounded-md border-richblack-700 bg-richblack-800 p-6 space-y-8 border-[1px]'>
+    <form onSubmit={handleSubmit(onSubmitForm)} className=' rounded-md border-richblack-700 bg-primaryDark p-6 space-y-8 border-[1px]'>
        
              {/* Course Title */}
        <div className="flex flex-col space-y-2">
-        <label  className="text-sm text-richblack-5" htmlFor='courseTitle'>
+        <label  className="text-sm text-primaryLight" htmlFor='courseTitle'>
           Course Title<sup className="text-pink-200">*</sup>
         </label>
 
@@ -179,7 +179,7 @@ import Upload from '../Upload'
 
       {/* Course Short Description */}
        <div className="flex flex-col space-y-2">
-         <label  className="text-sm text-richblack-5" htmlFor='courseShortDesc'>Course Short Description<sup className="text-pink-200">*</sup></label>
+         <label  className="text-sm text-primaryLight" htmlFor='courseShortDesc'>Course Short Description<sup className="text-pink-200">*</sup></label>
          <textarea
          id='courseShortDesc'
          placeholder='Enter Description'
@@ -195,7 +195,7 @@ import Upload from '../Upload'
 
       {/* Course Price */}
        <div className="flex flex-col space-y-2">
-         <label  className="text-sm text-richblack-5" htmlFor='coursePrice'>Course Price<sup className="text-pink-200">*</sup></label>
+         <label  className="text-sm text-primaryLight" htmlFor='coursePrice'>Course Price<sup className="text-pink-200">*</sup></label>
          <div className="relative">
           <input
             id="coursePrice"
@@ -209,7 +209,7 @@ import Upload from '../Upload'
             })}
             className="form-style w-full !pl-12"
           />
-          <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-richblack-400" />
+          <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-primaryLight" />
         </div>
          {
           errors.coursePrice && (<span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -220,7 +220,7 @@ import Upload from '../Upload'
       
       {/* Course Category */}
       <div className="flex flex-col space-y-2">
-        <label  className="text-sm text-richblack-5" htmlFor='courseCategory'>Course Category <sup className="text-pink-200">*</sup></label>
+        <label  className="text-sm text-primaryLight" htmlFor='courseCategory'>Course Category <sup className="text-pink-200">*</sup></label>
         <select id='courseCategory'
           defaultValue=""
           {...register('courseCategory' , {required:true})}
@@ -267,7 +267,7 @@ import Upload from '../Upload'
 
       {/* Benefits of the course */}
       <div className="flex flex-col space-y-2">
-        <label  className="text-sm text-richblack-5">Benefits of the course<sup className="text-pink-200">*</sup></label>
+        <label  className="text-sm text-primaryLight">Benefits of the course<sup className="text-pink-200">*</sup></label>
         <textarea
           id='courseBenefits'
           placeholder='Enter Benefits of the course'
@@ -297,12 +297,12 @@ import Upload from '../Upload'
         {
           editCourse && (
             <button onClick={() => dispatch(setStep(2))}
-            className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900`}>
+            className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-primaryDark4 py-[8px] px-[20px] font-semibold text-primaryLight`}>
               Continue Without Saving
             </button>
           )
         }
-        <IconBtn disabled={loading} text={!editCourse ? 'Next' : 'Save Changes'} className={'group flex text-black justify-center items-center  bg-yellow-25 pl-5 pr-5 pt-2  pb-2 font-semibold rounded-md gap-x-2'}>
+        <IconBtn disabled={loading} text={!editCourse ? 'Next' : 'Save Changes'} className={'group flex text-primaryDark4 justify-center items-center  bg-primaryLight pl-5 pr-5 pt-2  pb-2 font-semibold rounded-md gap-x-2'}>
           <MdNavigateNext className=' font-semibold'/>
         </IconBtn>
       </div>

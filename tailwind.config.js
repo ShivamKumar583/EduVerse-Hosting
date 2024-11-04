@@ -123,6 +123,14 @@ module.exports = {
         800: "#171717",
         900: "#141414",
       },
+      "primaryDark": "#4E374F",
+      "primaryDark2": "#7d4780",
+      "primaryDark3": "#d063d6",
+      "primaryDark4": "#352436",
+      "primaryLight": "#FEF5EF",
+      "primaryLight2": "#d1c6be",
+      "primaryLight3": "#e0bba2",
+      "primaryLight4": "#e8a274",
     },
     extend: {
       maxWidth: {

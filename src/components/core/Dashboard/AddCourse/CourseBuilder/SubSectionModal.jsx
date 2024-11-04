@@ -107,16 +107,16 @@ const SubSectionModal = ({modalData , setModalData , add = false , view  = false
     }
 
   return (
-    <div  className="fixed inset-0 z-[1000] !mt-0 grid h-screen w-screen place-items-center overflow-auto bg-white bg-opacity-10 backdrop-blur-sm">
-        <div className="my-10 w-11/12 max-w-[700px] rounded-lg border border-richblack-400 bg-richblack-800">
-            <div className="flex items-center justify-between rounded-t-lg bg-richblack-700 p-5">
-                <p className="text-xl font-semibold text-richblack-5">
+    <div  className="fixed inset-0 z-[1000] !mt-0 grid h-screen w-screen place-items-center overflow-auto bg-primaryLight bg-opacity-10 backdrop-blur-sm">
+        <div className="my-10 w-11/12 max-w-[700px] rounded-lg border border-primaryDark3 bg-primaryDark">
+            <div className="flex items-center justify-between rounded-t-lg bg-primaryDark4 p-5">
+                <p className="text-xl font-semibold text-primaryLight">
                     {view && 'Viewing'} 
                     {add && 'Adding'} 
                     {edit && 'Editing'} 
                 </p>
                 <button onClick={() => (!loading && setModalData(null))}>
-                    <RxCross1 className="text-2xl text-richblack-5"/>
+                    <RxCross1 className="text-2xl text-primaryLight"/>
                 </button>
             </div>
             <form onSubmit={handleSubmit(onSubmitForm)}
@@ -134,7 +134,7 @@ const SubSectionModal = ({modalData , setModalData , add = false , view  = false
                 />
 
                 <div className="flex flex-col space-y-2">
-                    <label className="text-sm text-richblack-5" htmlFor="lectureTitle">Lecture Title{!view && <sup className="text-pink-200">*</sup>}</label>
+                    <label className="text-sm text-primaryLight" htmlFor="lectureTitle">Lecture Title{!view && <sup className="text-pink-200">*</sup>}</label>
                     <input
                     disabled={view || loading}
                         id='lectureTitle'
@@ -149,7 +149,7 @@ const SubSectionModal = ({modalData , setModalData , add = false , view  = false
                     }
                 </div>
                 <div className="flex flex-col space-y-2">
-                    <label className="text-sm text-richblack-5" htmlFor='lectureDesc'>Lecture Description
+                    <label className="text-sm text-primaryLight" htmlFor='lectureDesc'>Lecture Description
                         {" "}
                         {!view && <sup className="text-pink-200">*</sup>}
                     </label>

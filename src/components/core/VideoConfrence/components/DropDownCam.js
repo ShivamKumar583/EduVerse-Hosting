@@ -26,21 +26,21 @@ export default function DropDownCam({
               onMouseEnter={() => { setIsHovered(true) }}
               onMouseLeave={() => { setIsHovered(false) }}
               disabled={!isCameraPermissionAllowed}
-              className={`focus:outline-none hover:ring-1 hover:ring-gray-250 hover:bg-black 
+              className={`focus:outline-none hover:ring-1 hover:bg-primaryDark 
               ${open
-                  ? "text-richblack-100 ring-1 ring-gray-250 bg-black"
-                  : "text-customGray-250 hover:text-richblack-100"
+                  ? "text-primaryLight ring-1 ring-gray-250 bg-primaryDark"
+                  : "text-customGray-250 hover:text-primaryLight"
                 }
               group inline-flex items-center rounded-md px-1 py-1 w-44 text-base font-normal
               ${!isCameraPermissionAllowed ? "opacity-50" : ""}`}
             >
-              <DropCAM fillColor={isHovered || open ? "#FFF" : "#B4B4B4"} />
+              <DropCAM fillColor={isHovered || open ? "#fef5ef" : "#4e374f"} />
               <span className=" overflow-hidden whitespace-nowrap overflow-ellipsis w-28 ml-7">
                 {isCameraPermissionAllowed ? selectedWebcam?.label : "Permission Needed"}
               </span>
 
               <FaChevronDown
-                className={`${open ? 'text-orange-300' : 'text-orange-300/70'}
+                className={`${open ? 'text-primaryLight' : 'text-primaryDark group-hover:text-primaryLight'}
                 ml-8 h-5 w-5 transition duration-150 ease-in-out group-hover:text-orange-300/80 mt-1`}
                 aria-hidden="true"
               />
@@ -59,14 +59,14 @@ export default function DropDownCam({
                 <div className="rounded-lg shadow-lg">
                   <div className="bg-gray-350 rounded-lg">
                     <div>
-                      <div className="flex flex-col">
+                      <div className="flex flex-col bg-primaryLight2 rounded-md">
                         {webcams.map(
                           (item, index) => {
                             return (
                               item?.kind === "videoinput" && (
                                 <div
                                   key={`webcams_${index}`}
-                                  className={` my-1 pl-4 pr-2 text-richblack-100 text-left flex`}
+                                  className={` my-1 pl-4 pr-2 text-primaryDark text-left flex`}
                                 >
                                   <span className="w-6 mr-2 flex items-center justify-center">
                                     {selectedWebcam?.label === item?.label && (
